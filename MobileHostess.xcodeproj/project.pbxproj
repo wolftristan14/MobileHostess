@@ -13,9 +13,12 @@
 		A116C0721E803A1F00E69F13 /* MobileHostess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A116C0701E803A1F00E69F13 /* MobileHostess.xcdatamodeld */; };
 		A116C0741E803A1F00E69F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A116C0731E803A1F00E69F13 /* Assets.xcassets */; };
 		A116C0771E803A1F00E69F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A116C0751E803A1F00E69F13 /* LaunchScreen.storyboard */; };
+		A17B4CEA1E80475F00CC31CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A17B4CE91E80475F00CC31CF /* GoogleService-Info.plist */; };
+		EB866B94C488FFB867BA6D93 /* Pods_MobileHostess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FCF7B20374D5D73B21C23D4 /* Pods-MobileHostess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHostess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess.debug.xcconfig"; sourceTree = "<group>"; };
 		A116C0661E803A1F00E69F13 /* MobileHostess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileHostess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A116C0691E803A1F00E69F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A116C06B1E803A1F00E69F13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		A116C0731E803A1F00E69F13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A116C0761E803A1F00E69F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A116C0781E803A1F00E69F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A15CF7857A4DA933F4D692D9 /* Pods-MobileHostess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHostess.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess.release.xcconfig"; sourceTree = "<group>"; };
+		A17B4CE91E80475F00CC31CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileHostess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB866B94C488FFB867BA6D93 /* Pods_MobileHostess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A07910914486E502420579E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4FCF7B20374D5D73B21C23D4 /* Pods-MobileHostess.debug.xcconfig */,
+				A15CF7857A4DA933F4D692D9 /* Pods-MobileHostess.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A116C05D1E803A1E00E69F13 = {
 			isa = PBXGroup;
 			children = (
 				A116C0681E803A1F00E69F13 /* MobileHostess */,
 				A116C0671E803A1F00E69F13 /* Products */,
+				A07910914486E502420579E2 /* Pods */,
+				D0D3D10E863767B5436246DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,9 +80,18 @@
 				A116C0731E803A1F00E69F13 /* Assets.xcassets */,
 				A116C0751E803A1F00E69F13 /* LaunchScreen.storyboard */,
 				A116C0781E803A1F00E69F13 /* Info.plist */,
+				A17B4CE91E80475F00CC31CF /* GoogleService-Info.plist */,
 				A116C0701E803A1F00E69F13 /* MobileHostess.xcdatamodeld */,
 			);
 			path = MobileHostess;
+			sourceTree = "<group>";
+		};
+		D0D3D10E863767B5436246DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A116C07B1E803A1F00E69F13 /* Build configuration list for PBXNativeTarget "MobileHostess" */;
 			buildPhases = (
+				C6CECA2FD9CFBCC3BD0C8DE2 /* [CP] Check Pods Manifest.lock */,
 				A116C0621E803A1E00E69F13 /* Sources */,
 				A116C0631E803A1E00E69F13 /* Frameworks */,
 				A116C0641E803A1E00E69F13 /* Resources */,
+				28331EE103B46A50F8C3A744 /* [CP] Embed Pods Frameworks */,
+				0F029E339A19EC2EA40B35F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,12 +157,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				A116C0771E803A1F00E69F13 /* LaunchScreen.storyboard in Resources */,
+				A17B4CEA1E80475F00CC31CF /* GoogleService-Info.plist in Resources */,
 				A116C0741E803A1F00E69F13 /* Assets.xcassets in Resources */,
 				A116C06F1E803A1F00E69F13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F029E339A19EC2EA40B35F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28331EE103B46A50F8C3A744 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6CECA2FD9CFBCC3BD0C8DE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A116C0621E803A1E00E69F13 /* Sources */ = {
@@ -260,6 +339,7 @@
 		};
 		A116C07C1E803A1F00E69F13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FCF7B20374D5D73B21C23D4 /* Pods-MobileHostess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileHostess/Info.plist;
@@ -272,6 +352,7 @@
 		};
 		A116C07D1E803A1F00E69F13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A15CF7857A4DA933F4D692D9 /* Pods-MobileHostess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MobileHostess/Info.plist;
@@ -301,6 +382,7 @@
 				A116C07D1E803A1F00E69F13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
