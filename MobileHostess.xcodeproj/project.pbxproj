@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10CEB8A1E80624E00E15369 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A10CEB891E80624E00E15369 /* GoogleService-Info.plist */; };
 		A116C06A1E803A1F00E69F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116C0691E803A1F00E69F13 /* AppDelegate.swift */; };
 		A116C06F1E803A1F00E69F13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A116C06D1E803A1F00E69F13 /* Main.storyboard */; };
 		A116C0721E803A1F00E69F13 /* MobileHostess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A116C0701E803A1F00E69F13 /* MobileHostess.xcdatamodeld */; };
@@ -18,12 +17,13 @@
 		A1A233C51E82F6FA009561FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233C41E82F6FA009561FB /* HomeViewController.swift */; };
 		A1A233C71E82F85D009561FB /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233C61E82F85D009561FB /* HomeTableViewCell.swift */; };
 		A1A233C91E830AB2009561FB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233C81E830AB2009561FB /* DetailsViewController.swift */; };
+		A1A233CB1E831E6D009561FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1A233CA1E831E6D009561FB /* GoogleService-Info.plist */; };
+		A1A233CD1E832028009561FB /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233CC1E832028009561FB /* AddRestaurantViewController.swift */; };
 		EB866B94C488FFB867BA6D93 /* Pods_MobileHostess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4FCF7B20374D5D73B21C23D4 /* Pods-MobileHostess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHostess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess.debug.xcconfig"; sourceTree = "<group>"; };
-		A10CEB891E80624E00E15369 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A116C0661E803A1F00E69F13 /* MobileHostess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileHostess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A116C0691E803A1F00E69F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A116C06E1E803A1F00E69F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		A1A233C41E82F6FA009561FB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A1A233C61E82F85D009561FB /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		A1A233C81E830AB2009561FB /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A1A233CA1E831E6D009561FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A1A233CC1E832028009561FB /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
 		A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileHostess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,10 +90,11 @@
 				A1A233C41E82F6FA009561FB /* HomeViewController.swift */,
 				A1A233C61E82F85D009561FB /* HomeTableViewCell.swift */,
 				A1A233C81E830AB2009561FB /* DetailsViewController.swift */,
+				A1A233CC1E832028009561FB /* AddRestaurantViewController.swift */,
 				A116C06D1E803A1F00E69F13 /* Main.storyboard */,
 				A116C0731E803A1F00E69F13 /* Assets.xcassets */,
+				A1A233CA1E831E6D009561FB /* GoogleService-Info.plist */,
 				A116C0751E803A1F00E69F13 /* LaunchScreen.storyboard */,
-				A10CEB891E80624E00E15369 /* GoogleService-Info.plist */,
 				A116C0781E803A1F00E69F13 /* Info.plist */,
 				A116C0701E803A1F00E69F13 /* MobileHostess.xcdatamodeld */,
 			);
@@ -168,10 +171,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A233CB1E831E6D009561FB /* GoogleService-Info.plist in Resources */,
 				A116C0771E803A1F00E69F13 /* LaunchScreen.storyboard in Resources */,
 				A116C0741E803A1F00E69F13 /* Assets.xcassets in Resources */,
 				A116C06F1E803A1F00E69F13 /* Main.storyboard in Resources */,
-				A10CEB8A1E80624E00E15369 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +240,7 @@
 				A1A233C91E830AB2009561FB /* DetailsViewController.swift in Sources */,
 				A116C0721E803A1F00E69F13 /* MobileHostess.xcdatamodeld in Sources */,
 				A116C06A1E803A1F00E69F13 /* AppDelegate.swift in Sources */,
+				A1A233CD1E832028009561FB /* AddRestaurantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

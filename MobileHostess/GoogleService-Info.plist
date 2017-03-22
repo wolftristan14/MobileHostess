@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>598984307980-br5t6sf16uhm81o5eh9n7qcps5gv5fe5.apps.googleusercontent.com</string>
+	<string>447987078020-mk26jfm9r39skqom99d84k9ho8bcc5ut.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.598984307980-br5t6sf16uhm81o5eh9n7qcps5gv5fe5</string>
+	<string>com.googleusercontent.apps.447987078020-mk26jfm9r39skqom99d84k9ho8bcc5ut</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAqBfGX2lctwcaUsTG_q2BVsxhX1JBuKnM</string>
+	<string>AIzaSyDs9NMvwpn2plCtE_nr6bzfOxUblyGbylM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>598984307980</string>
+	<string>447987078020</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.appcoda.FirebaseTutorial</string>
+	<string>com.tristanwolf.MobileHostess</string>
 	<key>PROJECT_ID</key>
-	<string>fir-tutorial2-e127d</string>
+	<string>mobile-hostess</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-tutorial2-e127d.appspot.com</string>
+	<string>mobile-hostess.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:598984307980:ios:13ac14d07051efab</string>
+	<string>1:447987078020:ios:bc9c65cb3bf60d9a</string>
 	<key>DATABASE_URL</key>
-	<string>https://fir-tutorial2-e127d.firebaseio.com</string>
+	<string>https://mobile-hostess.firebaseio.com</string>
 </dict>
 </plist>
