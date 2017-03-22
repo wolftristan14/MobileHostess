@@ -35,6 +35,10 @@ class LoginViewController: UIViewController {
             
                 if error == nil {
                     print("Logged in")
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+                    self.present(vc!, animated: true, completion: nil)
+                    
                 }else {
                     let alertController = UIAlertController(title: "Error", message: "Incorrect username and/or password", preferredStyle: .alert)
                     
