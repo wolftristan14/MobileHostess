@@ -21,6 +21,7 @@
 		A1A233CD1E832028009561FB /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233CC1E832028009561FB /* AddRestaurantViewController.swift */; };
 		A1A233CF1E83249E009561FB /* RestaurantSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233CE1E83249E009561FB /* RestaurantSignUpViewController.swift */; };
 		A1A233D11E8324AD009561FB /* RestaurantLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233D01E8324AD009561FB /* RestaurantLoginViewController.swift */; };
+		A1A233D31E832A9D009561FB /* EditRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233D21E832A9D009561FB /* EditRestaurantViewController.swift */; };
 		EB866B94C488FFB867BA6D93 /* Pods_MobileHostess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		A1A233CC1E832028009561FB /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
 		A1A233CE1E83249E009561FB /* RestaurantSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantSignUpViewController.swift; sourceTree = "<group>"; };
 		A1A233D01E8324AD009561FB /* RestaurantLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantLoginViewController.swift; sourceTree = "<group>"; };
+		A1A233D21E832A9D009561FB /* EditRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRestaurantViewController.swift; sourceTree = "<group>"; };
 		A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileHostess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 				A1A233CC1E832028009561FB /* AddRestaurantViewController.swift */,
 				A1A233CE1E83249E009561FB /* RestaurantSignUpViewController.swift */,
 				A1A233D01E8324AD009561FB /* RestaurantLoginViewController.swift */,
+				A1A233D21E832A9D009561FB /* EditRestaurantViewController.swift */,
 				A116C06D1E803A1F00E69F13 /* Main.storyboard */,
 				A116C0731E803A1F00E69F13 /* Assets.xcassets */,
 				A1A233CA1E831E6D009561FB /* GoogleService-Info.plist */,
@@ -241,6 +244,7 @@
 			files = (
 				A1A233C71E82F85D009561FB /* HomeTableViewCell.swift in Sources */,
 				A1A233C51E82F6FA009561FB /* HomeViewController.swift in Sources */,
+				A1A233D31E832A9D009561FB /* EditRestaurantViewController.swift in Sources */,
 				A17B4CEE1E805ACD00CC31CF /* LoginViewController.swift in Sources */,
 				A17B4CEC1E80496200CC31CF /* SignUpViewController.swift in Sources */,
 				A1A233C91E830AB2009561FB /* DetailsViewController.swift in Sources */,
