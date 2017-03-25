@@ -57,6 +57,6 @@ class AddRestaurantViewController:UIViewController {
         ref?.child("Restaurants").child("PartySizes").child("PartySize8").setValue(partySizeLabel8.text)
         ref?.child("Restaurants").child("PartySizes").child("PartySize9").setValue(partySizeLabel9.text)
 
-        ref?.child("Restaurants").child("Image").setValue(restaurantImage.image)
+        //ref?.child("Restaurants").child("Image").setValue(restaurantImage.image)
     }
 }
