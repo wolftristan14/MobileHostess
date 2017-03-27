@@ -15,6 +15,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     var ref:FIRDatabaseReference?
     var restaurantArray = [String]()
+    var addressArray = [String]()
     var databaseHandle:FIRDatabaseHandle?
 
     
@@ -31,14 +32,24 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
             
             
-            let data = snapshot.value as? String
+            let restaurantData = snapshot.value as? String
             
-            if data != nil && data != "" {
+            if restaurantData != nil && restaurantData != "" {
                 self.restaurantArray.append(snapshot.value as! String)
             }
             
             self.tableView.reloadData()
         
+        })
+        
+        databaseHandle = ref?.child("Addresses").observe(.childAdded, with: {(snapshot) in
+        
+        let addressData = snapshot.value as? String
+            
+            if addressData != nil && addressData != "" {
+                self.addressArray.append(snapshot.value as! String)
+            }
+        self.tableView.reloadData()
         })
         
     }
@@ -51,9 +62,10 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         let cell:HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "hometableviewcell", for: indexPath) as! HomeTableViewCell
         
         let restaurant:String = self.restaurantArray[indexPath.row]
+        let address:String = self.addressArray[indexPath.row]
         cell.restuarantImageView.image = #imageLiteral(resourceName: "Tom's_Restaurant,_NYC")
         cell.restaurantNameLabel.text = restaurant
-        cell.restaurantAddressLabel.text = "123 fake st"
+        cell.restaurantAddressLabel.text = address
         cell.restaurantWaitTime.text = "30 mins"
         
         self.passedInfo = cell

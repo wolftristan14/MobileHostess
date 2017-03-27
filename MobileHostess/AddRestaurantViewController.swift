@@ -13,7 +13,6 @@ import FirebaseDatabase
 
 class AddRestaurantViewController:UIViewController {
     
-    var ref: FIRDatabaseReference?
     
     
     
@@ -31,10 +30,13 @@ class AddRestaurantViewController:UIViewController {
     @IBOutlet weak var partySizeLabel9: UITextField!
     @IBOutlet weak var restaurantImage: UIImageView!
     
+    var databaseRef:FIRDatabaseReference! {
+        return FIRDatabase.database().reference()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = FIRDatabase.database().reference()
     }
     
     @IBAction func choosePhotoFromLibrary(_ sender: Any) {
@@ -44,19 +46,39 @@ class AddRestaurantViewController:UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        ref?.child("Restaurants").child("Name").setValue(restaurantNameLabel.text)
-        ref?.child("Restaurants").child("Address").setValue(restaurantAddressLabel.text)
+        print("writing to database")
         
-        ref?.child("Restaurants").child("PartySizes").child("PartySize1").setValue(partySizeLabel1.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize2").setValue(partySizeLabel2.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize3").setValue(partySizeLabel3.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize4").setValue(partySizeLabel4.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize5").setValue(partySizeLabel5.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize6").setValue(partySizeLabel6.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize7").setValue(partySizeLabel7.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize8").setValue(partySizeLabel8.text)
-        ref?.child("Restaurants").child("PartySizes").child("PartySize9").setValue(partySizeLabel9.text)
+        let restaurantRef =  databaseRef.child("Restaurants").childByAutoId()
+        
+        var name: String!
+        if restaurantNameLabel.text != nil {
+            name = self.restaurantNameLabel.text
+        }
+        
+        var address: String!
+        if restaurantAddressLabel.text != nil {
+            address = self.restaurantAddressLabel.text
+        }
+        
+        let restaurant = Restaurant(name: name, address: address)
+        
+        restaurantRef.setValue(restaurant.toAnyObject())
+        
+        
+        
+        
+       // ref?.child("Addresses").child("Address").setValue(restaurantAddressLabel.text)
+       // ref?.child("PartySizes").child("PartySize1").setValue(partySizeLabel1.text)
+       // ref?.child("PartySizes").child("PartySize2").setValue(partySizeLabel2.text)
+       // ref?.child("PartySizes").child("PartySize3").setValue(partySizeLabel3.text)
+       // ref?.child("PartySizes").child("PartySize4").setValue(partySizeLabel4.text)
+       // ref?.child("PartySizes").child("PartySize5").setValue(partySizeLabel5.text)
+       // ref?.child("PartySizes").child("PartySize6").setValue(partySizeLabel6.text)
+       // ref?.child("PartySizes").child("PartySize7").setValue(partySizeLabel7.text)
+       // ref?.child("PartySizes").child("PartySize8").setValue(partySizeLabel8.text)
+       // ref?.child("PartySizes").child("PartySize9").setValue(partySizeLabel9.text)
 
         //ref?.child("Restaurants").child("Image").setValue(restaurantImage.image)
+        
     }
 }
