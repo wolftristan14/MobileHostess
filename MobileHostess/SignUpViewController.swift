@@ -20,6 +20,20 @@ class SignUpViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func goToCustomerLogin(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    @IBAction func goToRestaurantSignUp(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantSignUp")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    @IBAction func goToRestaurantLogin(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantLogin")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
     @IBAction func signUpAction(_ sender: Any) {
         
         if emailTextField.text == "" || passwordTextField.text == "" {

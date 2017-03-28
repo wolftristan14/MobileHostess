@@ -12,7 +12,7 @@
         <!--Restaurant Login View Controller-->
         <scene sceneID="Hm9-2v-ggW">
             <objects>
-                <viewController id="MWj-SO-sgT" customClass="RestaurantLoginViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantLogin" id="MWj-SO-sgT" customClass="RestaurantLoginViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K8p-4w-5eX"/>
                         <viewControllerLayoutGuide type="bottom" id="oKn-q0-ZXj"/>
@@ -47,29 +47,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ7-hr-Zfp">
-                                <rect key="frame" x="160" y="617" width="55" height="30"/>
+                                <rect key="frame" x="169" y="617" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="restaurantLogin:" destination="MWj-SO-sgT" eventType="touchUpInside" id="1hI-tb-Kln"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSO-w9-eaN">
                                 <rect key="frame" x="122" y="362" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Restaurant Sign up"/>
+                                <connections>
+                                    <action selector="goToRestaurantSignUp:" destination="MWj-SO-sgT" eventType="touchUpInside" id="Ufv-bb-Zwz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc6-bM-84F">
                                 <rect key="frame" x="124" y="400" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login as customer"/>
+                                <connections>
+                                    <action selector="goToCustomerLogin:" destination="MWj-SO-sgT" eventType="touchUpInside" id="BTt-Fo-tH5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sd-FO-dN0">
                                 <rect key="frame" x="117" y="438" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up as customer"/>
+                                <connections>
+                                    <action selector="goToCustomerSignUp:" destination="MWj-SO-sgT" eventType="touchUpInside" id="gzD-0C-jj4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tB-br-E3N">
                                 <rect key="frame" x="167" y="211" width="41" height="21"/>
@@ -81,6 +93,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="AId-32-Pwt" id="Bib-0e-Tid"/>
+                        <outlet property="passwordTextField" destination="Ukl-Ws-wzG" id="65A-K1-hq9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zI7-vn-fno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +105,7 @@
         <!--Restaurant Sign Up View Controller-->
         <scene sceneID="fNU-k4-BLE">
             <objects>
-                <viewController id="1d0-IX-BCi" customClass="RestaurantSignUpViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantSignUp" id="1d0-IX-BCi" customClass="RestaurantSignUpViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UPd-UM-iuQ"/>
                         <viewControllerLayoutGuide type="bottom" id="c3G-eO-uj2"/>
@@ -131,7 +147,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-4F-Q98">
                                 <rect key="frame" x="160" y="617" width="55" height="30"/>
@@ -139,25 +155,41 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="restaurantSignUp:" destination="1d0-IX-BCi" eventType="touchUpInside" id="fD7-au-B0D"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ih-0Z-Sw6">
                                 <rect key="frame" x="129" y="370" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Restaurant Login"/>
+                                <connections>
+                                    <action selector="goToRestaurantLogin:" destination="1d0-IX-BCi" eventType="touchUpInside" id="XNF-j5-Y6K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-Q9-W4m">
                                 <rect key="frame" x="123" y="408" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login as customer"/>
+                                <connections>
+                                    <action selector="goToCustomerLogin:" destination="1d0-IX-BCi" eventType="touchUpInside" id="Moc-Xd-a4c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-Ly-3DS">
                                 <rect key="frame" x="117" y="446" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up as customer"/>
+                                <connections>
+                                    <action selector="goToCustomerSignUp:" destination="1d0-IX-BCi" eventType="touchUpInside" id="UgE-MH-diW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="uBw-KJ-KBB" id="NkO-pW-biu"/>
+                        <outlet property="passwordTextField" destination="9gG-kT-7tg" id="guV-Oi-8QP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U89-0Q-Bq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,16 +256,25 @@
                                 <rect key="frame" x="121" y="456" width="132" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login as restaurant"/>
+                                <connections>
+                                    <action selector="goToRestaurantLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ka-dH-kCT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQI-4I-9vb">
                                 <rect key="frame" x="167" y="378" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="goToCustomerLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6u4-e7-4UB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPZ-xv-FtO">
                                 <rect key="frame" x="114" y="416" width="146" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up as restaurant"/>
+                                <connections>
+                                    <action selector="goToRestaurantSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vK-27-qT6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -250,7 +291,7 @@
         <!--Edit Restaurant View Controller-->
         <scene sceneID="yX5-8p-54U">
             <objects>
-                <viewController id="BJ2-p6-AbZ" customClass="EditRestaurantViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditRestaurant" id="BJ2-p6-AbZ" customClass="EditRestaurantViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fU8-VH-3Oe"/>
                         <viewControllerLayoutGuide type="bottom" id="vVD-zD-y76"/>
@@ -268,7 +309,7 @@
         <!--Add Restaurant View Controller-->
         <scene sceneID="c1w-De-Yo7">
             <objects>
-                <viewController id="Vle-9d-B6a" customClass="AddRestaurantViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddRestaurant" id="Vle-9d-B6a" customClass="AddRestaurantViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="psz-7D-HuL"/>
                         <viewControllerLayoutGuide type="bottom" id="uuk-N4-l5j"/>
@@ -297,6 +338,7 @@
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="done:" destination="Vle-9d-B6a" eventType="touchUpInside" id="1WF-PW-df2"/>
+                                    <segue destination="BJ2-p6-AbZ" kind="show" id="37U-FG-eIv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-MD-BCd">
@@ -640,7 +682,7 @@
         <!--Login View Controller-->
         <scene sceneID="8p6-MN-wiB">
             <objects>
-                <viewController id="8tF-Rn-oi1" customClass="LoginViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="8tF-Rn-oi1" customClass="LoginViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eXm-mD-l2f"/>
                         <viewControllerLayoutGuide type="bottom" id="BwD-br-CT9"/>
@@ -698,16 +740,25 @@
                                 <rect key="frame" x="162" y="374" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up"/>
+                                <connections>
+                                    <action selector="goToCustomerSignUp:" destination="8tF-Rn-oi1" eventType="touchUpInside" id="cFw-CS-tmV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7v-f6-3Tj">
                                 <rect key="frame" x="119" y="450" width="132" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login as restaurant"/>
+                                <connections>
+                                    <action selector="goToRestaurantLogin:" destination="8tF-Rn-oi1" eventType="touchUpInside" id="0ok-Za-pyc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-re-SDa">
                                 <rect key="frame" x="113" y="412" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up as restaurant "/>
+                                <connections>
+                                    <action selector="goToRestaurantSignUp:" destination="8tF-Rn-oi1" eventType="touchUpInside" id="wnQ-r7-N9t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
