@@ -67,7 +67,7 @@ class AddRestaurantViewController:UIViewController {
         
         
         
-       // ref?.child("Addresses").child("Address").setValue(restaurantAddressLabel.text)
+       
        // ref?.child("PartySizes").child("PartySize1").setValue(partySizeLabel1.text)
        // ref?.child("PartySizes").child("PartySize2").setValue(partySizeLabel2.text)
        // ref?.child("PartySizes").child("PartySize3").setValue(partySizeLabel3.text)
@@ -78,7 +78,7 @@ class AddRestaurantViewController:UIViewController {
        // ref?.child("PartySizes").child("PartySize8").setValue(partySizeLabel8.text)
        // ref?.child("PartySizes").child("PartySize9").setValue(partySizeLabel9.text)
 
-        //ref?.child("Restaurants").child("Image").setValue(restaurantImage.image)
+       
         
     }
 }

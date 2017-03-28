@@ -6,17 +6,17 @@
 //  Copyright © 2017 Tristan Wolf. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Firebase
 import FirebaseDatabase
 
 class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var ref:FIRDatabaseReference?
-    var restaurantArray = [String]()
-    var addressArray = [String]()
-    var databaseHandle:FIRDatabaseHandle?
+    //var ref:FIRDatabaseReference!
+    var restaurantArray:[Restaurant] = []
+    let ref = FIRDatabase.database().reference(withPath: "Restaurants")
+
+    //var databaseHandle:FIRDatabaseHandle?
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,31 +26,31 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     ref = FIRDatabase.database().reference()
+        //let ref = FIRDatabase.database().reference(withPath: "Restaurants")
         
-        databaseHandle = ref?.child("Restaurants").observe(.childAdded, with: {(snapshot) in
+     ref.observe(.value, with: { snapshot in
         
-            
-            
-            let restaurantData = snapshot.value as? String
-            
-            if restaurantData != nil && restaurantData != "" {
-                self.restaurantArray.append(snapshot.value as! String)
-            }
-            
-            self.tableView.reloadData()
+        var newRestaurants:[Restaurant] = []
         
-        })
+        for item in snapshot.children {
+           
+            let restaurant = Restaurant(snapshot: item as! FIRDataSnapshot)
         
-        databaseHandle = ref?.child("Addresses").observe(.childAdded, with: {(snapshot) in
+            newRestaurants.append(restaurant)
+        }
         
-        let addressData = snapshot.value as? String
-            
-            if addressData != nil && addressData != "" {
-                self.addressArray.append(snapshot.value as! String)
-            }
+        // fix this, isnt working like it did before because snapshot.value is a dictionary
+        
+        self.restaurantArray = newRestaurants
         self.tableView.reloadData()
-        })
+        
+     }){
+        (error) in
+        print(error.localizedDescription)
+        
+        }
+        
+     
         
     }
     
@@ -61,11 +61,10 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "hometableviewcell", for: indexPath) as! HomeTableViewCell
         
-        let restaurant:String = self.restaurantArray[indexPath.row]
-        let address:String = self.addressArray[indexPath.row]
+        let restaurant = restaurantArray[indexPath.row]
         cell.restuarantImageView.image = #imageLiteral(resourceName: "Tom's_Restaurant,_NYC")
-        cell.restaurantNameLabel.text = restaurant
-        cell.restaurantAddressLabel.text = address
+        cell.restaurantNameLabel.text = restaurant.name
+        cell.restaurantAddressLabel.text = restaurant.address
         cell.restaurantWaitTime.text = "30 mins"
         
         self.passedInfo = cell

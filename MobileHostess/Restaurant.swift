@@ -10,32 +10,34 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
+
 struct Restaurant {
     
-    var name:String!
-    var address:String!
+    var name:String
+    var address:String
     
-    var ref: FIRDatabaseReference?
-    var key:String!
+    let ref: FIRDatabaseReference?
+    var key:String
     
     init(name: String, address: String, key: String = "") {
         
         self.name = name
         self.address = address
         self.key = key
-        self.ref = FIRDatabase.database().reference()
+        self.ref = nil
         
     }
     
     init(snapshot: FIRDataSnapshot) {
-        self.name = snapshot.value(forKey: "name") as! String
-        self.address = snapshot.value(forKey: "address") as! String
-        self.key = snapshot.key
-        self.ref = snapshot.ref
+        let snapshotValue = snapshot.value as! [String: AnyObject]
+        name = snapshotValue["name"] as! String
+        address = snapshotValue["address"] as! String
+        key = snapshot.key
+        ref = snapshot.ref
     }
     
-    func toAnyObject() -> [String: AnyObject] {
-        return ["name": name as AnyObject, "address": address as AnyObject]
+    func toAnyObject() -> Any {
+        return ["name": name, "address": address]
     }
     
 }
