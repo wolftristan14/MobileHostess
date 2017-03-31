@@ -60,25 +60,49 @@ class AddRestaurantViewController:UIViewController {
             address = self.restaurantAddressLabel.text
         }
         
-        let restaurant = Restaurant(name: name, address: address)
+        var waitTimes: [String] = []
+        var waitTime:String
+        
+        if partySizeLabel1 != nil {
+            waitTime = self.partySizeLabel1.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel2 != nil {
+            waitTime = self.partySizeLabel2.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel3 != nil {
+            waitTime = self.partySizeLabel3.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel4 != nil {
+            waitTime = self.partySizeLabel4.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel5 != nil {
+            waitTime = self.partySizeLabel5.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel6 != nil {
+            waitTime = self.partySizeLabel6.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel7 != nil {
+            waitTime = self.partySizeLabel7.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel8 != nil {
+            waitTime = self.partySizeLabel8.text!
+            waitTimes.append(waitTime)
+        }
+        if partySizeLabel9 != nil {
+            waitTime = self.partySizeLabel9.text!
+            waitTimes.append(waitTime)
+        }
+        
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes)
         
         restaurantRef.setValue(restaurant.toAnyObject())
-        
-        
-        
-        
-       
-       // ref?.child("PartySizes").child("PartySize1").setValue(partySizeLabel1.text)
-       // ref?.child("PartySizes").child("PartySize2").setValue(partySizeLabel2.text)
-       // ref?.child("PartySizes").child("PartySize3").setValue(partySizeLabel3.text)
-       // ref?.child("PartySizes").child("PartySize4").setValue(partySizeLabel4.text)
-       // ref?.child("PartySizes").child("PartySize5").setValue(partySizeLabel5.text)
-       // ref?.child("PartySizes").child("PartySize6").setValue(partySizeLabel6.text)
-       // ref?.child("PartySizes").child("PartySize7").setValue(partySizeLabel7.text)
-       // ref?.child("PartySizes").child("PartySize8").setValue(partySizeLabel8.text)
-       // ref?.child("PartySizes").child("PartySize9").setValue(partySizeLabel9.text)
-
-       
         
     }
 }

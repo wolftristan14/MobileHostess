@@ -15,14 +15,16 @@ struct Restaurant {
     
     var name:String
     var address:String
+    var waitTimes:[String]
     
     let ref: FIRDatabaseReference?
     var key:String
     
-    init(name: String, address: String, key: String = "") {
+    init(name: String, address: String, waitTimes: [String], key: String = "") {
         
         self.name = name
         self.address = address
+        self.waitTimes = waitTimes
         self.key = key
         self.ref = nil
         
@@ -32,12 +34,13 @@ struct Restaurant {
         let snapshotValue = snapshot.value as! [String: AnyObject]
         name = snapshotValue["name"] as! String
         address = snapshotValue["address"] as! String
+        waitTimes = snapshotValue["waitTimes"] as! [String]
         key = snapshot.key
         ref = snapshot.ref
     }
     
     func toAnyObject() -> Any {
-        return ["name": name, "address": address]
+        return ["name": name, "address": address, "waitTimes": waitTimes]
     }
     
 }
