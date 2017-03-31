@@ -12,11 +12,9 @@ import FirebaseDatabase
 
 class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //var ref:FIRDatabaseReference!
     var restaurantArray:[Restaurant] = []
     let ref = FIRDatabase.database().reference(withPath: "Restaurants")
 
-    //var databaseHandle:FIRDatabaseHandle?
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,7 +24,6 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let ref = FIRDatabase.database().reference(withPath: "Restaurants")
         
      ref.observe(.value, with: { snapshot in
         
@@ -39,7 +36,6 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             newRestaurants.append(restaurant)
         }
         
-        // fix this, isnt working like it did before because snapshot.value is a dictionary
         
         self.restaurantArray = newRestaurants
         self.tableView.reloadData()
