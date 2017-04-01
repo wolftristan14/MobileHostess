@@ -50,6 +50,8 @@ class AddRestaurantViewController:UIViewController {
         
         let restaurantRef =  databaseRef.child("Restaurants").childByAutoId()
         
+        let key = restaurantRef.key
+        
         var name: String!
         if restaurantNameLabel.text != nil {
             name = self.restaurantNameLabel.text
@@ -100,7 +102,7 @@ class AddRestaurantViewController:UIViewController {
             waitTimes.append(waitTime)
         }
         
-        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes)
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key)
         
         restaurantRef.setValue(restaurant.toAnyObject())
         

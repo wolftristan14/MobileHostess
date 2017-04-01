@@ -45,7 +45,7 @@ class RestaurantLoginViewController:UIViewController {
                 if error == nil {
                     print("Logged in")
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditRestaurant")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddRestaurant")
                     self.present(vc!, animated: true, completion: nil)
                     
                 }else {
