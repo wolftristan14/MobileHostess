@@ -28,8 +28,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         waitTimeCategoryPickerView.delegate = self
         waitTimeCategoryPickerView.dataSource = self
-       // waitTimePickerView.delegate = self
-       // waitTimePickerView.dataSource = self
+       
         
         
         

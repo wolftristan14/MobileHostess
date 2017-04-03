@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class AddRestaurantViewController:UIViewController {
+class AddRestaurantViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     
@@ -30,19 +30,40 @@ class AddRestaurantViewController:UIViewController {
     @IBOutlet weak var partySizeLabel9: UITextField!
     @IBOutlet weak var restaurantImage: UIImageView!
     
+    let picker = UIImagePickerController()
+    
     var databaseRef:FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        picker.delegate = self
     }
     
     @IBAction func choosePhotoFromLibrary(_ sender: Any) {
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = false
+        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        present(picker, animated:true, completion:nil)
     }
     
     @IBAction func takePhoto(_ sender: Any) {
+        picker.sourceType = .camera
+        picker.allowsEditing = false
+        picker.cameraCaptureMode = .photo
+        present(picker, animated:true, completion:nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        restaurantImage.contentMode = .scaleAspectFit
+        restaurantImage.image = chosenImage
+        dismiss(animated:true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func done(_ sender: Any) {
