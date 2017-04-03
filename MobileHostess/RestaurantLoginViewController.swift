@@ -13,6 +13,8 @@ import FirebaseDatabase
 
 class RestaurantLoginViewController:UIViewController {
     
+    
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
@@ -48,7 +50,7 @@ class RestaurantLoginViewController:UIViewController {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditRestaurant")
                     self.present(vc!, animated: true, completion: nil)
                     
-                }else {
+                } else {
                     let alertController = UIAlertController(title: "Error", message: "Incorrect username and/or password", preferredStyle: .alert)
                     
                     let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

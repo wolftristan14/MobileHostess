@@ -332,6 +332,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="restaurantAddressLabel" destination="rHs-YW-mnq" id="bMm-Ae-GJM"/>
+                        <outlet property="restaurantNameLabel" destination="v18-oF-M5e" id="pFw-Bh-sEd"/>
+                        <outlet property="waitTimeCategoryPickerView" destination="se3-iK-Xdd" id="lX8-Cr-XYH"/>
+                        <outlet property="waitTimePickerView" destination="w41-Df-fo0" id="GKW-Ao-r9r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1d-AL-4LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -603,7 +609,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="he2-R0-EMV" id="njE-6G-Z2b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aep-hy-ukc">

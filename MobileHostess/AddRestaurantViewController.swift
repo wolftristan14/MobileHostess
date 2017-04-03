@@ -48,9 +48,9 @@ class AddRestaurantViewController:UIViewController {
     @IBAction func done(_ sender: Any) {
         print("writing to database")
         
-        let restaurantRef =  databaseRef.child("Restaurants").childByAutoId()
+        let restaurantRef =  databaseRef.child("Restaurants").child((FIRAuth.auth()?.currentUser?.uid)!)
         
-        let key = restaurantRef.key
+        //let key = restaurantRef.key
         
         var name: String!
         if restaurantNameLabel.text != nil {
@@ -102,7 +102,7 @@ class AddRestaurantViewController:UIViewController {
             waitTimes.append(waitTime)
         }
         
-        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key)
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes /*key: key*/)
         
         restaurantRef.setValue(restaurant.toAnyObject())
         

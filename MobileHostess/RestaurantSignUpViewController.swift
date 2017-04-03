@@ -51,6 +51,7 @@ class RestaurantSignUpViewController:UIViewController {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddRestaurant")
                     self.present(vc!, animated: true, completion: nil)
                     
+                    
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
@@ -59,6 +60,7 @@ class RestaurantSignUpViewController:UIViewController {
                     
                     self.present(alertController, animated: true, completion: nil)
                 }
+                
             }
         }
     }
