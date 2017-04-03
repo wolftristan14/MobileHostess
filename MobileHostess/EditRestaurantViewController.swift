@@ -19,6 +19,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var waitTimeCategoryPickerView: UIPickerView!
     
     @IBOutlet weak var waitTimePickerView: UIPickerView!
+    var waitTimesArray:[String] = []
   
     let rootRef = FIRDatabase.database().reference(withPath: "Restaurants")
 
@@ -27,8 +28,8 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         waitTimeCategoryPickerView.delegate = self
         waitTimeCategoryPickerView.dataSource = self
-        waitTimePickerView.delegate = self
-        waitTimePickerView.dataSource = self
+       // waitTimePickerView.delegate = self
+       // waitTimePickerView.dataSource = self
         
         
         
@@ -41,8 +42,15 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             self.restaurantNameLabel.text = userRestaurant.name
             self.restaurantAddressLabel.text = userRestaurant.address
             
+            for time in userRestaurant.waitTimes {
+                
+                if time != "" {
             
-            
+            self.waitTimesArray.append(time)
+                    
+                }
+            }
+            self.waitTimeCategoryPickerView.reloadAllComponents()
         
         })
         
@@ -57,11 +65,11 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 5
+        return self.waitTimesArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Value"
+        return self.waitTimesArray[row]
     }
    
     
