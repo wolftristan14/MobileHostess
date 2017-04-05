@@ -16,7 +16,7 @@ struct Restaurant {
     var name:String
     var address:String
     var waitTimes:[String]
-    var imageURL:String
+    var imageURL:String?
     
     let ref: FIRDatabaseReference?
    // var key:String
@@ -37,14 +37,14 @@ struct Restaurant {
         name = snapshotValue["name"] as! String
         address = snapshotValue["address"] as! String
         waitTimes = snapshotValue["waitTimes"] as! [String]
-        imageURL = snapshotValue["imageURL"] as! String
+        imageURL = snapshotValue["imageURL"] as? String
        // key = snapshot.key
         ref = snapshot.ref
         
     }
     
     func toAnyObject() -> Any {
-        return ["name": name, "address": address, "waitTimes": waitTimes, "imageURL": imageURL]
+        return ["name": name, "address": address, "waitTimes": waitTimes, "imageURL": imageURL ?? ""]
     }
     
 }

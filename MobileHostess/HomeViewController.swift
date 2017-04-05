@@ -57,10 +57,25 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         let cell:HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "hometableviewcell", for: indexPath) as! HomeTableViewCell
         
         let restaurant = restaurantArray[indexPath.row]
-        cell.restuarantImageView.image = #imageLiteral(resourceName: "Tom's_Restaurant,_NYC")
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
         cell.restaurantWaitTime.text = "30 mins"
+        
+        if let imageURL = restaurant.imageURL {
+            let url = URL(string: imageURL)
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+            
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    cell.restuarantImageView.image = UIImage(data: data!)
+                }
+            
+            }).resume()
+        }
         
         self.passedInfo = cell
         
