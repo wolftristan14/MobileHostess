@@ -147,5 +147,12 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         
         restaurantRef.setValue(restaurant.toAnyObject())
         
+        presentEditRestaurantVC()
+        
+    }
+    
+    func presentEditRestaurantVC() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditRestaurant")
+        present(vc!, animated: true, completion: nil)
     }
 }
