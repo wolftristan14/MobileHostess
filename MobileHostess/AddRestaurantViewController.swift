@@ -69,6 +69,9 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     @IBAction func done(_ sender: Any) {
         print("writing to database")
         
+        
+        
+        
         let restaurantRef =  databaseRef.child("Restaurants").child((FIRAuth.auth()?.currentUser?.uid)!)
         
         //let key = restaurantRef.key
