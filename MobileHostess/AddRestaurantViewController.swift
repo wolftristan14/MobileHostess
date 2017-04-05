@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseDatabase
+import FirebaseStorage
+
 
 class AddRestaurantViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -68,11 +69,27 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func done(_ sender: Any) {
         print("writing to database")
+        let imageName = NSUUID().uuidString
+        let storageRef = FIRStorage.storage().reference().child(imageName)
         
+        if let uploadData = UIImagePNGRepresentation(restaurantImage.image!) {
+            
+            storageRef.put(uploadData, metadata: nil, completion: {(metadata, error) in
+            
+                if error != nil {
+                    print(error?.localizedDescription ?? "error")
+                    return
+                }
+            let imageURL = metadata?.downloadURL()?.absoluteString
+                self.writeToDatabase(imageURL: imageURL!)
+            })
         
-        
-        
-        let restaurantRef =  databaseRef.child("Restaurants").child((FIRAuth.auth()?.currentUser?.uid)!)
+        }
+    }
+    
+    func writeToDatabase(imageURL:String) {
+    
+    let restaurantRef = databaseRef.child("Restaurants").child((FIRAuth.auth()?.currentUser?.uid)!)
         
         //let key = restaurantRef.key
         
@@ -126,7 +143,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
             waitTimes.append(waitTime)
         }
         
-        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes /*key: key*/)
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes /*key: key*/, imageURL: imageURL )
         
         restaurantRef.setValue(restaurant.toAnyObject())
         

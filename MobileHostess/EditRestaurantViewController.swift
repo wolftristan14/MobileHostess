@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
 
 class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
