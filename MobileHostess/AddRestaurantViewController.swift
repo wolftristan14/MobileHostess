@@ -72,7 +72,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         let imageName = NSUUID().uuidString
         let storageRef = FIRStorage.storage().reference().child(imageName)
         
-        if let uploadData = UIImagePNGRepresentation(restaurantImage.image!) {
+        if let uploadData = UIImagePNGRepresentation((restaurantImage.image!) {
             
             storageRef.put(uploadData, metadata: nil, completion: {(metadata, error) in
             
@@ -106,40 +106,40 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         var waitTimes:[String: AnyObject] = [:]
         var waitTime:String?
         
-        if partySizeLabel1 != nil {
-            waitTime = self.partySizeLabel1.text ?? "0"
+        if partySizeLabel1 != nil && partySizeLabel1.text != "" {
+            waitTime = self.partySizeLabel1.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel2 != nil {
-            waitTime = self.partySizeLabel2.text ?? "0"
+        if partySizeLabel2 != nil && partySizeLabel2.text != ""  {
+            waitTime = self.partySizeLabel2.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel3 != nil {
-            waitTime = self.partySizeLabel3.text ?? "0"
+        if partySizeLabel3 != nil && partySizeLabel3.text != "" {
+            waitTime = self.partySizeLabel3.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel4 != nil {
-            waitTime = self.partySizeLabel4.text ?? "0"
+        if partySizeLabel4 != nil && partySizeLabel4.text != "" {
+            waitTime = self.partySizeLabel4.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel5 != nil {
-            waitTime = self.partySizeLabel5.text ?? "0"
+        if partySizeLabel5 != nil && partySizeLabel5.text != "" {
+            waitTime = self.partySizeLabel5.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel6 != nil {
-            waitTime = self.partySizeLabel6.text ?? "0"
+        if partySizeLabel6 != nil && partySizeLabel6.text != "" {
+            waitTime = self.partySizeLabel6.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel7 != nil {
-            waitTime = self.partySizeLabel7.text ?? "0"
+        if partySizeLabel7 != nil && partySizeLabel7.text != "" {
+            waitTime = self.partySizeLabel7.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel8 != nil {
-            waitTime = self.partySizeLabel8.text ?? "0"
+        if partySizeLabel8 != nil && partySizeLabel8.text != "" {
+            waitTime = self.partySizeLabel8.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
-        if partySizeLabel9 != nil {
-            waitTime = self.partySizeLabel9.text ?? "0"
+        if partySizeLabel9 != nil && partySizeLabel9.text != "" {
+            waitTime = self.partySizeLabel9.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         
