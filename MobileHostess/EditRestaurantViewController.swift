@@ -42,14 +42,15 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             self.restaurantNameLabel.text = userRestaurant.name
             self.restaurantAddressLabel.text = userRestaurant.address
             
-           // for category,time in userRestaurant.waitTimes! {
+            for (category,time) in userRestaurant.waitTimes! {
                 
-            //    if time != "" {
+                
             
-          //  self.waitTimesArray.append(time)
+            self.waitTimesArray.append(category)
                     
-          //      }
-          //  }
+                    
+                
+            }
             self.waitTimeCategoryPickerView.reloadAllComponents()
         
         })
