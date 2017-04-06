@@ -103,51 +103,51 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
             address = self.restaurantAddressLabel.text
         }
         
-        var waitTimes: [String] = []
-        var waitTime:String
+        var waitTimes:[String: AnyObject] = [:]
+        var waitTime:String?
         
         if partySizeLabel1 != nil {
-            waitTime = self.partySizeLabel1.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel1.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel2 != nil {
-            waitTime = self.partySizeLabel2.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel2.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel3 != nil {
-            waitTime = self.partySizeLabel3.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel3.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel4 != nil {
-            waitTime = self.partySizeLabel4.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel4.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel5 != nil {
-            waitTime = self.partySizeLabel5.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel5.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel6 != nil {
-            waitTime = self.partySizeLabel6.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel6.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel7 != nil {
-            waitTime = self.partySizeLabel7.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel7.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel8 != nil {
-            waitTime = self.partySizeLabel8.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel8.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         if partySizeLabel9 != nil {
-            waitTime = self.partySizeLabel9.text!
-            waitTimes.append(waitTime)
+            waitTime = self.partySizeLabel9.text ?? "0"
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         
         let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes /*key: key*/, imageURL: imageURL )
         
         restaurantRef.setValue(restaurant.toAnyObject())
         
-        presentEditRestaurantVC()
+        //presentEditRestaurantVC()
         
     }
     

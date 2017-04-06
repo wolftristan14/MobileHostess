@@ -16,8 +16,10 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var restaurantAddressLabel: UILabel!
     @IBOutlet weak var waitTimeCategoryPickerView: UIPickerView!
     
-    @IBOutlet weak var waitTimePickerView: UIPickerView!
+    @IBOutlet weak var waitTimeLabel: UILabel!
+    @IBOutlet weak var waitTimeTextField: UITextField!
     var waitTimesArray:[String] = []
+    var currentCategory:String!
   
     let rootRef = FIRDatabase.database().reference(withPath: "Restaurants")
 
@@ -26,7 +28,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         waitTimeCategoryPickerView.delegate = self
         waitTimeCategoryPickerView.dataSource = self
-       
+        
         
         
         
@@ -36,17 +38,18 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
       let userRestaurant = Restaurant(snapshot: snapshot)
             
+            
             self.restaurantNameLabel.text = userRestaurant.name
             self.restaurantAddressLabel.text = userRestaurant.address
             
-            for time in userRestaurant.waitTimes {
+           // for category,time in userRestaurant.waitTimes! {
                 
-                if time != "" {
+            //    if time != "" {
             
-            self.waitTimesArray.append(time)
+          //  self.waitTimesArray.append(time)
                     
-                }
-            }
+          //      }
+          //  }
             self.waitTimeCategoryPickerView.reloadAllComponents()
         
         })
@@ -62,12 +65,30 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.waitTimesArray.count
+        return waitTimesArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.waitTimesArray[row]
+        return waitTimesArray[row]
     }
-   
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.currentCategory = waitTimesArray[row]
+        }
+    
+   /* @IBAction func saveWaitTimeForCategory(_ sender: Any) {
+        
+        let timeRef = rootRef.child((FIRAuth.auth()?.currentUser?.uid)!).child("waitTimes")
+        var time:String?
+        if self.currentCategory ==  {
+        
+        if waitTimeTextField != nil {
+            time = waitTimeTextField.text!
+            waitTimeLabel.text = time
+            }
+            
+        }
+    }*/
+ 
     
 }
