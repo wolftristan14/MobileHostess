@@ -74,22 +74,12 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.currentCategory = waitTimesArray[row]
+        //do stuff here
+        
+       // self.currentCategory = waitTimesArray[row]
         }
     
-   /* @IBAction func saveWaitTimeForCategory(_ sender: Any) {
-        
-        let timeRef = rootRef.child((FIRAuth.auth()?.currentUser?.uid)!).child("waitTimes")
-        var time:String?
-        if self.currentCategory ==  {
-        
-        if waitTimeTextField != nil {
-            time = waitTimeTextField.text!
-            waitTimeLabel.text = time
-            }
-            
-        }
-    }*/
+
  
     
 }

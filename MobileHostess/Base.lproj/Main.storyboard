@@ -350,9 +350,6 @@
                                 <rect key="frame" x="171" y="595" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveWaitTimeForCategory:" destination="BJ2-p6-AbZ" eventType="touchUpInside" id="KaO-v2-gXc"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r6-y9-9M4">
                                 <rect key="frame" x="146" y="510" width="85" height="17"/>

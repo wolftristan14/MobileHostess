@@ -19,15 +19,15 @@ struct Restaurant {
     var imageURL:String?
     
     let ref: FIRDatabaseReference?
-   // var key:String
+    var key:String
     
-    init(name: String, address: String, waitTimes: [String: AnyObject]/*, key: String = ""*/, imageURL: String) {
+    init(name: String, address: String, waitTimes: [String: AnyObject], key: String = "", imageURL: String) {
         
         self.name = name
         self.address = address
         self.waitTimes = waitTimes
         self.imageURL = imageURL
-        //self.key = key
+        self.key = key
         self.ref = nil
         
     }
@@ -39,7 +39,7 @@ struct Restaurant {
         waitTimes = snapshotValue["waitTimes"] as? [String: AnyObject]
         time = waitTimes?["time"] as? String
         imageURL = snapshotValue["imageURL"] as? String
-       // key = snapshot.key
+        key = snapshot.key
         ref = snapshot.ref
         
     }
