@@ -18,7 +18,9 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var waitTimeLabel: UILabel!
     @IBOutlet weak var waitTimeTextField: UITextField!
-    var waitTimesArray:[String] = []
+    var waitTimesArray:[String: AnyObject] = [:]
+    var categoryArray:[String]!
+    var timeArray:[String]!
     var currentCategory:String!
   
     let rootRef = FIRDatabase.database().reference(withPath: "Restaurants")
@@ -46,11 +48,12 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
                 
                 
             
-            self.waitTimesArray.append(category)
-                    
-                    
+            self.waitTimesArray.updateValue(time, forKey: category)
+            
                 
             }
+            self.categoryArray = Array(self.waitTimesArray.keys)
+
             self.waitTimeCategoryPickerView.reloadAllComponents()
         
         })
@@ -66,19 +69,34 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return waitTimesArray.count
+        
+        if categoryArray != nil {
+        
+        return categoryArray.count
+        } else {
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return waitTimesArray[row]
+        if categoryArray != nil {
+        
+        return Array(waitTimesArray.keys)[row]
+        } else {
+            return "loading..."
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //do stuff here
         
-       // self.currentCategory = waitTimesArray[row]
+        waitTimeLabel.text = Array(waitTimesArray.values)[row] as? String
+        
         }
     
+    @IBAction func updateWaitTime(_ sender: Any) {
+        
+        
+    }
 
  
     
