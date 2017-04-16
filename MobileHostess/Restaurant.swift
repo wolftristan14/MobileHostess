@@ -33,12 +33,12 @@ struct Restaurant {
     }
     
     init(snapshot: FIRDataSnapshot) {
-        let snapshotValue = snapshot.value as! [String: AnyObject]
-        name = snapshotValue["name"] as? String
-        address = snapshotValue["address"] as? String
-        waitTimes = snapshotValue["waitTimes"] as? [String: AnyObject]
+        let snapshotValue = snapshot.value as? [String: AnyObject]
+        name = snapshotValue?["name"] as? String
+        address = snapshotValue?["address"] as? String
+        waitTimes = snapshotValue?["waitTimes"] as? [String: AnyObject]
         time = waitTimes?["time"] as? String
-        imageURL = snapshotValue["imageURL"] as? String
+        imageURL = snapshotValue?["imageURL"] as? String
         key = snapshot.key
         ref = snapshot.ref
         

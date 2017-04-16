@@ -15,6 +15,8 @@ class HomeTableViewCell:UITableViewCell {
     @IBOutlet weak var restaurantAddressLabel: UILabel!
     @IBOutlet weak var restaurantWaitTime: UILabel!
     
+    var key:String!
+    
     
     
 }

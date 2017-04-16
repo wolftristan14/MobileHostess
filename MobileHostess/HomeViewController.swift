@@ -13,11 +13,11 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     var restaurantArray:[Restaurant] = []
     let ref = FIRDatabase.database().reference(withPath: "Restaurants")
+    var passedImage:UIImage!
 
 
     
     @IBOutlet weak var tableView: UITableView!
-    var passedInfo:HomeTableViewCell!
     
     
     override func viewDidLoad() {
@@ -60,6 +60,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
         cell.restaurantWaitTime.text = "30 mins"
+        cell.key = restaurant.key
         
         if let imageURL = restaurant.imageURL {
             let url = URL(string: imageURL)
@@ -77,9 +78,12 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             }).resume()
         }
         
-        self.passedInfo = cell
+        
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,11 +91,30 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
        
             let detailsViewController:DetailsViewController = segue.destination as! DetailsViewController
             
-            detailsViewController.restaurantName = self.passedInfo.restaurantNameLabel.text
-            detailsViewController.restaurantAddress = self.passedInfo.restaurantAddressLabel.text
-            detailsViewController.restaurantWaitTime = self.passedInfo.restaurantWaitTime.text
-            detailsViewController.image = self.passedInfo.restuarantImageView.image
+            let indexPath = tableView.indexPathForSelectedRow?.row
+            let restaurant = restaurantArray[indexPath!]
+            detailsViewController.restaurantName = restaurant.name
+            detailsViewController.restaurantAddress = restaurant.address
+            detailsViewController.restaurantWaitTime = "30 mins"
             
+            if let imageURL = restaurant.imageURL {
+                let url = URL(string: imageURL)
+                URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+                    
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        detailsViewController.image = UIImage(data: data!)
+                    }
+                    
+                }).resume()
+            }
+            
+            
+            detailsViewController.key = restaurant.key
             
         }
     }

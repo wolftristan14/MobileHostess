@@ -143,7 +143,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         
-        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL )
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL)
         
         restaurantRef.setValue(restaurant.toAnyObject())
         

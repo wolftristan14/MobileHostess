@@ -733,11 +733,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-DD-kWg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ffE-Pb-iJO"/>
                     <connections>
+                        <outlet property="partySizeSegmentedControl" destination="QD3-DD-kWg" id="LCL-WC-W6S"/>
                         <outlet property="restaurantAddressLabel" destination="5Jx-7g-fjz" id="Pyt-s0-XD3"/>
                         <outlet property="restaurantImage" destination="Fk6-Qi-Gad" id="F9E-vF-jue"/>
                         <outlet property="restaurantNameLabel" destination="Xdb-Bd-vf2" id="gjl-3K-lxj"/>
@@ -746,7 +755,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn9-vB-AjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="896"/>
+            <point key="canvasLocation" x="1237.5999999999999" y="895.50224887556226"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="8p6-MN-wiB">
