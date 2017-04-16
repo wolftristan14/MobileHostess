@@ -23,6 +23,7 @@ class DetailsViewController:UIViewController {
     var restaurantWaitTime:String!
     var restaurantAddress:String!
     var image:UIImage!
+    var uuid:String!
     var waitTimesDictionary:[String: AnyObject] = [:]
 
     
@@ -38,13 +39,13 @@ class DetailsViewController:UIViewController {
         restaurantImage.image = image
         
         
-       // didLayoutSubviews()
+        didLayoutSubviews()
     }
     
      func didLayoutSubviews() {
         
 
-        let userRef = rootRef.child((FIRAuth.auth()?.currentUser?.uid)!)
+        let userRef = rootRef.child(uuid)
         
         userRef.observeSingleEvent(of: .value, with: {snapshot in
             
@@ -71,6 +72,7 @@ class DetailsViewController:UIViewController {
     
     
     func updateSegmentedControl()  {
+        partySizeSegmentedControl.removeAllSegments()
         for (category, _) in waitTimesDictionary {
           partySizeSegmentedControl.insertSegment(withTitle: category, at: 0, animated: true)
             

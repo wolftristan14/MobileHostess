@@ -91,7 +91,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     
     let restaurantRef = databaseRef.child("Restaurants").child((FIRAuth.auth()?.currentUser?.uid)!)
         
-        let key = restaurantRef.key
+        let key = databaseRef.child("Restaurants").key
         
         var name: String!
         if restaurantNameLabel.text != nil {
@@ -143,7 +143,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
         
-        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL)
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL, uuid: (FIRAuth.auth()?.currentUser?.uid)!)
         
         restaurantRef.setValue(restaurant.toAnyObject())
         

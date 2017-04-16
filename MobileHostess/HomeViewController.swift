@@ -60,7 +60,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
         cell.restaurantWaitTime.text = "30 mins"
-        cell.key = restaurant.key
+        cell.uuid = restaurant.uuid
         
         if let imageURL = restaurant.imageURL {
             let url = URL(string: imageURL)
@@ -76,10 +76,11 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 }
             
             }).resume()
+
         }
         
         
-        
+
         return cell
     }
     
@@ -96,22 +97,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             detailsViewController.restaurantName = restaurant.name
             detailsViewController.restaurantAddress = restaurant.address
             detailsViewController.restaurantWaitTime = "30 mins"
-            
-            if let imageURL = restaurant.imageURL {
-                let url = URL(string: imageURL)
-                URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
-                    
-                    if error != nil {
-                        print(error!)
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        detailsViewController.image = UIImage(data: data!)
-                    }
-                    
-                }).resume()
-            }
+            detailsViewController.uuid = restaurant.uuid
+            //detailsViewController.image = restaurant.image //fix this image isnt being passed
             
             
             detailsViewController.key = restaurant.key
