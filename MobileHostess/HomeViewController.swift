@@ -59,7 +59,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         let restaurant = restaurantArray[indexPath.row]
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
-        cell.restaurantWaitTime.text = "30 mins"
+        cell.restaurantWaitTime.text = restaurant.waitTimes?.first?.value as! String!
         cell.uuid = restaurant.uuid
         
         if let imageURL = restaurant.imageURL {
@@ -96,7 +96,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             let restaurant = restaurantArray[indexPath!]
             detailsViewController.restaurantName = restaurant.name
             detailsViewController.restaurantAddress = restaurant.address
-            detailsViewController.restaurantWaitTime = "30 mins"
+            detailsViewController.restaurantWaitTime = restaurant.waitTimes?.first?.value as! String!
             detailsViewController.uuid = restaurant.uuid
             //detailsViewController.image = restaurant.image //fix this image isnt being passed
             
