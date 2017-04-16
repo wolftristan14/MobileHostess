@@ -22,6 +22,7 @@ class DetailsViewController:UIViewController {
     var restaurantName:String!
     var restaurantWaitTime:String!
     var restaurantAddress:String!
+   
     var image:UIImage!
     var uuid:String!
     var waitTimesDictionary:[String: AnyObject] = [:]
@@ -32,6 +33,7 @@ class DetailsViewController:UIViewController {
     
     
     override func viewDidLoad() {
+    
         super.viewDidLoad()
         restaurantNameLabel.text = restaurantName
         restaurantAddressLabel.text = restaurantAddress
@@ -79,6 +81,14 @@ class DetailsViewController:UIViewController {
         }
     }
     
+  
+        
+    @IBAction func partySizeChanged(_ sender: Any) {
+        let currentPartySize = partySizeSegmentedControl.titleForSegment(at: partySizeSegmentedControl.selectedSegmentIndex)
+        
+        restaurantWaitTimeLabel.text = waitTimesDictionary[currentPartySize!] as! String?
+    }
+   
     
     
 }
