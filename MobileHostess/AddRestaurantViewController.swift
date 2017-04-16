@@ -72,7 +72,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         let imageName = NSUUID().uuidString
         let storageRef = FIRStorage.storage().reference().child(imageName)
         
-        if let uploadData = UIImagePNGRepresentation(restaurantImage.image!) {
+        if let uploadData = UIImagePNGRepresentation(restaurantImage.image ?? #imageLiteral(resourceName: "Tom's_Restaurant,_NYC")) {
             
             storageRef.put(uploadData, metadata: nil, completion: {(metadata, error) in
             
