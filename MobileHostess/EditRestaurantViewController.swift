@@ -19,6 +19,8 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var waitTimeLabel: UILabel!
     @IBOutlet weak var waitTimeTextField: UITextField!
     var waitTimesArray:[String: AnyObject] = [:]
+    var categoryAndTimeArray = [(String, String)]()
+
     var categoryArray:[String]!
     var timeArray:[String]!
     var currentCategory:String!
@@ -52,9 +54,9 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             
                 
             }
-            self.categoryArray = Array(self.waitTimesArray.keys)
+            
+            self.updatePickerView()
 
-            self.waitTimeCategoryPickerView.reloadAllComponents()
         
         })
         
@@ -64,32 +66,33 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
     }
     
+    func updatePickerView() {
+        
+        for (category, time) in waitTimesArray {
+            self.categoryAndTimeArray.append((category, time as! String))
+            self.categoryAndTimeArray.sort {$0 < $1}
+        }
+        self.waitTimeCategoryPickerView.reloadAllComponents()
+     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        if categoryArray != nil {
-        
-        return categoryArray.count
-        } else {
-            return 1
-        }
+        return categoryAndTimeArray.count
+       
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if categoryArray != nil {
-        
-        return Array(waitTimesArray.keys)[row]
-        } else {
-            return "loading..."
-        }
+        return self.categoryAndTimeArray[row].0
+       
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.currentCategory = Array(waitTimesArray.keys)[row]
-        waitTimeLabel.text = Array(waitTimesArray.values)[row] as? String
+        self.currentCategory = self.categoryAndTimeArray[row].0
+        waitTimeLabel.text = self.categoryAndTimeArray[row].1
         
         }
     
@@ -103,13 +106,14 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         if self.waitTimeTextField.text != nil && self.waitTimeTextField.text != "" {
             waitTime = self.waitTimeTextField.text
             self.waitTimeLabel.text = self.waitTimeTextField.text
-        }
+        
         
         let updateRef = rootRef.child("\(key)")
         
+        
         updateRef.child("waitTimes").updateChildValues([self.currentCategory!: waitTime ?? "0"])
         
-        
+        }
     }
 
  

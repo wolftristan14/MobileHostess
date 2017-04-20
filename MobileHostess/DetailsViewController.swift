@@ -26,6 +26,7 @@ class DetailsViewController:UIViewController {
     var image:UIImage!
     var uuid:String!
     var waitTimesDictionary:[String: AnyObject] = [:]
+    var categoryAndTimeArray = [(String, String)]()
 
     
     let rootRef = FIRDatabase.database().reference(withPath: "Restaurants")
@@ -53,10 +54,6 @@ class DetailsViewController:UIViewController {
             
             let userRestaurant = Restaurant(snapshot: snapshot)
             
-            
-            //self.restaurantNameLabel.text = userRestaurant.name
-            // self.restaurantAddressLabel.text = userRestaurant.address
-            
             for (category,time) in userRestaurant.waitTimes! {
                 
                 
@@ -65,22 +62,32 @@ class DetailsViewController:UIViewController {
                 
                 
             }
-            //  self.categoryArray = Array(self.waitTimesArray.keys)
-            self.updateSegmentedControl()
+            self.sortArray()
             
         })
     }
 
     
     
-    func updateSegmentedControl()  {
+    func sortArray()  {
+        for (category, time) in waitTimesDictionary {
+          
+            categoryAndTimeArray.append((category, time as! String))
+            categoryAndTimeArray.sort {$0 > $1}
+            
+            }
+        updateSegmentedControl()
+       
+    }
+    
+    func updateSegmentedControl() {
         partySizeSegmentedControl.removeAllSegments()
-        for (category, _) in waitTimesDictionary {
-          partySizeSegmentedControl.insertSegment(withTitle: category, at: 0, animated: true)
+
+        for (category, time) in categoryAndTimeArray {
+            partySizeSegmentedControl.insertSegment(withTitle: category, at: 0, animated: true)
             
         }
     }
-    
   
         
     @IBAction func partySizeChanged(_ sender: Any) {

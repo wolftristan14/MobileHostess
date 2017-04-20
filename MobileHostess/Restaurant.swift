@@ -17,6 +17,7 @@ struct Restaurant {
     var waitTimes:[String : AnyObject]?
     var time:String?
     var imageURL:String?
+    var image:UIImage?
     var uuid:String?
     
     let ref: FIRDatabaseReference?
