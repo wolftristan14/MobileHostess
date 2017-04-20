@@ -73,6 +73,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 
                 DispatchQueue.main.async {
                     cell.restuarantImageView.image = UIImage(data: data!)
+                    
                 }
             
             }).resume()
@@ -98,7 +99,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             detailsViewController.restaurantAddress = restaurant.address
             detailsViewController.restaurantWaitTime = restaurant.waitTimes?.first?.value as! String!
             detailsViewController.uuid = restaurant.uuid
-            //detailsViewController.image = restaurant.image //fix this image isnt being passed
+            detailsViewController.imageURL = restaurant.imageURL //fix this image isnt being passed
             
             
             detailsViewController.key = restaurant.key

@@ -70,6 +70,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
         for (category, time) in waitTimesArray {
             self.categoryAndTimeArray.append((category, time as! String))
+            
             self.categoryAndTimeArray.sort {$0 < $1}
         }
         self.waitTimeCategoryPickerView.reloadAllComponents()
@@ -86,13 +87,14 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        waitTimeLabel.text = self.categoryAndTimeArray[row].1
         return self.categoryAndTimeArray[row].0
+
        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.currentCategory = self.categoryAndTimeArray[row].0
-        waitTimeLabel.text = self.categoryAndTimeArray[row].1
         
         }
     
@@ -101,17 +103,17 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
         let key = rootRef.child((FIRAuth.auth()?.currentUser?.uid)!).key
         
-        var waitTime:String?
+        var waitTime:String
         
         if self.waitTimeTextField.text != nil && self.waitTimeTextField.text != "" {
-            waitTime = self.waitTimeTextField.text
+            waitTime = self.waitTimeTextField.text!
             self.waitTimeLabel.text = self.waitTimeTextField.text
         
         
         let updateRef = rootRef.child("\(key)")
         
         
-        updateRef.child("waitTimes").updateChildValues([self.currentCategory!: waitTime ?? "0"])
+        updateRef.child("waitTimes").updateChildValues([self.currentCategory!: waitTime])
         
         }
     }

@@ -23,7 +23,7 @@ class DetailsViewController:UIViewController {
     var restaurantWaitTime:String!
     var restaurantAddress:String!
    
-    var image:UIImage!
+    var imageURL:String!
     var uuid:String!
     var waitTimesDictionary:[String: AnyObject] = [:]
     var categoryAndTimeArray = [(String, String)]()
@@ -39,7 +39,22 @@ class DetailsViewController:UIViewController {
         restaurantNameLabel.text = restaurantName
         restaurantAddressLabel.text = restaurantAddress
         restaurantWaitTimeLabel.text = restaurantWaitTime
-        restaurantImage.image = image
+        
+        let url = URL(string: imageURL)
+
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+                
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.restaurantImage.image = UIImage(data: data!)
+                    
+                }
+                
+            }).resume()
         
         
         didLayoutSubviews()
@@ -83,7 +98,7 @@ class DetailsViewController:UIViewController {
     func updateSegmentedControl() {
         partySizeSegmentedControl.removeAllSegments()
 
-        for (category, time) in categoryAndTimeArray {
+        for (category, _) in categoryAndTimeArray {
             partySizeSegmentedControl.insertSegment(withTitle: category, at: 0, animated: true)
             
         }
