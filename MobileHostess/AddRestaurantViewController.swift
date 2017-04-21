@@ -30,13 +30,17 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var partySizeLabel8: UITextField!
     @IBOutlet weak var partySizeLabel9: UITextField!
     @IBOutlet weak var restaurantImage: UIImageView!
+    @IBOutlet weak var partySizesTextView: UITextView!
     
     let picker = UIImagePickerController()
+    var waitTimes:[String: AnyObject] = [:]
+
     
     var databaseRef:FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
@@ -87,6 +91,22 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         }
     }
     
+    
+    @IBAction func addPartySize(_ sender: Any) {
+        var waitTime:String?
+
+        if partySizeLabel1 != nil && partySizeLabel1.text != "" {
+            waitTime = self.partySizeLabel1.text!
+            waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
+            
+        }
+        let valuesArray = Array(self.waitTimes.keys)
+        let cleanValuesArray = valuesArray.description.trimmingCharacters(in: .init(charactersIn: "[]"))
+        partySizesTextView.text = cleanValuesArray
+        partySizeLabel1.text?.removeAll()
+        self.reloadInputViews()
+    }
+    
     func writeToDatabase(imageURL:String) {
     
     let restaurantRef = databaseRef.child("Restaurants").child((FIRAuth.auth()?.currentUser?.uid)!)
@@ -103,10 +123,10 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
             address = self.restaurantAddressLabel.text
         }
         
-        var waitTimes:[String: AnyObject] = [:]
-        var waitTime:String?
+        //var waitTimes:[String: AnyObject] = [:]
+        //var waitTime:String?
         
-        if partySizeLabel1 != nil && partySizeLabel1.text != "" {
+       /* if partySizeLabel1 != nil && partySizeLabel1.text != "" {
             waitTime = self.partySizeLabel1.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
         }
@@ -141,7 +161,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         if partySizeLabel9 != nil && partySizeLabel9.text != "" {
             waitTime = self.partySizeLabel9.text!
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
-        }
+        }*/
         
         let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL, uuid: (FIRAuth.auth()?.currentUser?.uid)!)
         

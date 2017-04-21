@@ -92,6 +92,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         if segue.identifier == "details" {
        
             let detailsViewController:DetailsViewController = segue.destination as! DetailsViewController
+
             
             let indexPath = tableView.indexPathForSelectedRow?.row
             let restaurant = restaurantArray[indexPath!]
