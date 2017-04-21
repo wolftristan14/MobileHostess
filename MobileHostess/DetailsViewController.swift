@@ -111,6 +111,11 @@ class DetailsViewController:UIViewController {
         restaurantWaitTimeLabel.text = waitTimesDictionary[currentPartySize!] as! String?
     }
    
+    @IBAction func backToHomeVC(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+       // let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+        //present(homeVC!, animated: true, completion: nil)
+    }
     
     
 }

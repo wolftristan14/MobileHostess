@@ -745,10 +745,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYE-9v-Vgy">
+                                <rect key="frame" x="149" y="617" width="76" height="30"/>
+                                <state key="normal" title="Back to list"/>
+                                <connections>
+                                    <action selector="backToHomeVC:" destination="C0O-jH-MOr" eventType="touchUpInside" id="g6y-79-ies"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZYE-9v-Vgy" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="04P-pZ-I9S"/>
                             <constraint firstItem="Xdb-Bd-vf2" firstAttribute="centerX" secondItem="QD3-DD-kWg" secondAttribute="centerX" id="4Hp-eH-2UP"/>
+                            <constraint firstItem="2WM-e9-15F" firstAttribute="top" secondItem="ZYE-9v-Vgy" secondAttribute="bottom" constant="20" id="A4y-wu-ajm"/>
                             <constraint firstItem="5Jx-7g-fjz" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="Hy9-SW-d4g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QD3-DD-kWg" secondAttribute="trailing" constant="-16" id="Iqo-61-YEw"/>
                             <constraint firstItem="QD3-DD-kWg" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="JIP-r0-g42"/>
