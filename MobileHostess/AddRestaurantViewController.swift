@@ -100,9 +100,11 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
             waitTimes.updateValue("0" as AnyObject, forKey: waitTime!)
             
         }
-        let valuesArray = Array(self.waitTimes.keys)
+        var valuesArray = Array(self.waitTimes.keys)
+        valuesArray.sort {$0 < $1}
         let cleanValuesArray = valuesArray.description.trimmingCharacters(in: .init(charactersIn: "[]"))
         partySizesTextView.text = cleanValuesArray
+        
         partySizeLabel1.text?.removeAll()
         self.reloadInputViews()
     }

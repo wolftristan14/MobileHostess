@@ -114,7 +114,8 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
         
         updateRef.child("waitTimes").updateChildValues([self.currentCategory!: waitTime])
-        
+            self.waitTimeTextField.text?.removeAll()
+
         }
     }
 
