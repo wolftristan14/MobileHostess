@@ -18,7 +18,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var waitTimeLabel: UILabel!
     @IBOutlet weak var waitTimeTextField: UITextField!
-    var waitTimesArray:[String: AnyObject] = [:]
+    var waitTimesDictionary:[String: AnyObject] = [:]
     var categoryAndTimeArray = [(String, String)]()
 
     var categoryArray:[String]!
@@ -45,12 +45,12 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             
             self.restaurantNameLabel.text = userRestaurant.name
             self.restaurantAddressLabel.text = userRestaurant.address
-            
+            self.waitTimesDictionary.removeAll()
             for (category,time) in userRestaurant.waitTimes! {
                 
                 
             
-            self.waitTimesArray.updateValue(time, forKey: category)
+            self.waitTimesDictionary.updateValue(time, forKey: category)
             
                 
             }
@@ -67,8 +67,8 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func updatePickerView() {
-        
-        for (category, time) in waitTimesArray {
+        self.categoryAndTimeArray.removeAll()
+        for (category, time) in waitTimesDictionary {
             self.categoryAndTimeArray.append((category, time as! String))
             
             self.categoryAndTimeArray.sort {$0 < $1}
@@ -115,6 +115,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
         updateRef.child("waitTimes").updateChildValues([self.currentCategory!: waitTime])
             self.waitTimeTextField.text?.removeAll()
+            viewDidLoad()
 
         }
     }
