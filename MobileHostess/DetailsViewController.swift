@@ -108,13 +108,13 @@ class DetailsViewController:UIViewController {
     @IBAction func partySizeChanged(_ sender: Any) {
         let currentPartySize = partySizeSegmentedControl.titleForSegment(at: partySizeSegmentedControl.selectedSegmentIndex)
         
-        restaurantWaitTimeLabel.text = waitTimesDictionary[currentPartySize!] as! String?
+        let selectedWaitTime:String = (waitTimesDictionary[currentPartySize!] as! String?)!
+        restaurantWaitTimeLabel.text = "\(selectedWaitTime) Mins"
+
     }
    
     @IBAction func backToHomeVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-       // let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-        //present(homeVC!, animated: true, completion: nil)
     }
     
     

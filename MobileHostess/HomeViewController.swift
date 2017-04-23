@@ -59,7 +59,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         let restaurant = restaurantArray[indexPath.row]
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
-        cell.restaurantWaitTime.text = restaurant.waitTimes?.first?.value as! String!
+        let cellWaitTime:String = restaurant.waitTimes?.first?.value as! String!
+        cell.restaurantWaitTime.text = "\(cellWaitTime) Mins"
         cell.uuid = restaurant.uuid
         
         if let imageURL = restaurant.imageURL {
@@ -98,7 +99,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             let restaurant = restaurantArray[indexPath!]
             detailsViewController.restaurantName = restaurant.name
             detailsViewController.restaurantAddress = restaurant.address
-            detailsViewController.restaurantWaitTime = restaurant.waitTimes?.first?.value as! String!
+            let detailWaitTime:String = restaurant.waitTimes?.first?.value as! String!
+            detailsViewController.restaurantWaitTime = "\(detailWaitTime) Mins"
             detailsViewController.uuid = restaurant.uuid
             detailsViewController.imageURL = restaurant.imageURL
             

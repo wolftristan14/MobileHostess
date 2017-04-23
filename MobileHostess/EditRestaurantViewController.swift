@@ -87,7 +87,9 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        waitTimeLabel.text = self.categoryAndTimeArray[row].1
+        
+        let waitTime:String = self.categoryAndTimeArray[row].1
+        waitTimeLabel.text = "\(waitTime) Mins"
         return self.categoryAndTimeArray[row].0
 
        
@@ -107,7 +109,8 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
         if self.waitTimeTextField.text != nil && self.waitTimeTextField.text != "" {
             waitTime = self.waitTimeTextField.text!
-            self.waitTimeLabel.text = self.waitTimeTextField.text
+            
+            self.waitTimeLabel.text = "\(waitTime) Mins"
         
         
         let updateRef = rootRef.child("\(key)")
