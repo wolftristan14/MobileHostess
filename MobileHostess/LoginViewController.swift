@@ -18,21 +18,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func goToCustomerSignUp(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MobileHostess.SignUpViewController")
-        self.present(vc!, animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CustomerSignUp" {
+            let signUpViewController:SignUpViewController = segue.destination as! SignUpViewController
+        }
     }
-    @IBAction func goToRestaurantSignUp(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantSignUp")
-        self.present(vc!, animated: true, completion: nil)
+    
+    @IBAction func prepareToUnwindToLoginVC(segue:UIStoryboardSegue) {
+        
     }
-    @IBAction func goToRestaurantLogin(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantLogin")
-        self.present(vc!, animated: true, completion: nil)
-    }
+ 
     
     @IBAction func loginAction(_ sender: Any) {
         
@@ -51,7 +48,7 @@ class LoginViewController: UIViewController {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
                     self.present(vc!, animated: true, completion: nil)
                     
-                }else {
+                } else {
                     let alertController = UIAlertController(title: "Error", message: "Incorrect username and/or password", preferredStyle: .alert)
                     
                     let alertAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

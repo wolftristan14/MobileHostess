@@ -100,7 +100,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             detailsViewController.restaurantAddress = restaurant.address
             detailsViewController.restaurantWaitTime = restaurant.waitTimes?.first?.value as! String!
             detailsViewController.uuid = restaurant.uuid
-            detailsViewController.imageURL = restaurant.imageURL //fix this image isnt being passed
+            detailsViewController.imageURL = restaurant.imageURL
             
             
             detailsViewController.key = restaurant.key

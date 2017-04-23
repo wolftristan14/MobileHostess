@@ -18,18 +18,8 @@ class RestaurantSignUpViewController:UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func goToRestaurantLogin(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantLogin")
-        self.present(vc!, animated: true, completion: nil)
-    }
-    @IBAction func goToCustomerLogin(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-        self.present(vc!, animated: true, completion: nil)
-    }
-    @IBAction func goToCustomerSignUp(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MobileHostess.SignUpViewController")
-        self.present(vc!, animated: true, completion: nil)
-    }
+  
+    
     
     
     @IBAction func restaurantSignUp(_ sender: Any) {

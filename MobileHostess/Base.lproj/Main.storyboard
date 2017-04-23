@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tF-Rn-oi1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aqW-Ia-A1u">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -55,24 +55,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSO-w9-eaN">
-                                <rect key="frame" x="122.5" y="362" width="130" height="30"/>
-                                <state key="normal" title="Restaurant Sign up"/>
+                                <rect key="frame" x="160.5" y="362" width="55" height="30"/>
+                                <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <action selector="goToRestaurantSignUp:" destination="MWj-SO-sgT" eventType="touchUpInside" id="Ufv-bb-Zwz"/>
+                                    <segue destination="1d0-IX-BCi" kind="show" identifier="RestaurantSignUp" id="pxz-3i-jWb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc6-bM-84F">
-                                <rect key="frame" x="124.5" y="400" width="126" height="30"/>
-                                <state key="normal" title="Login as customer"/>
+                                <rect key="frame" x="170.5" y="400" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="goToCustomerLogin:" destination="MWj-SO-sgT" eventType="touchUpInside" id="BTt-Fo-tH5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sd-FO-dN0">
-                                <rect key="frame" x="117.5" y="438" width="140" height="30"/>
-                                <state key="normal" title="Sign up as customer"/>
-                                <connections>
-                                    <action selector="goToCustomerSignUp:" destination="MWj-SO-sgT" eventType="touchUpInside" id="gzD-0C-jj4"/>
+                                    <segue destination="ufi-Tr-WxQ" kind="unwind" unwindAction="prepareToUnwindToCustomerOrRestaurantVCWithSegue:" id="v03-tv-6Gr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tB-br-E3N">
@@ -95,21 +88,19 @@
                         <constraints>
                             <constraint firstItem="gJ7-hr-Zfp" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="1h4-2t-6Oh"/>
                             <constraint firstItem="AId-32-Pwt" firstAttribute="top" secondItem="4tB-br-E3N" secondAttribute="bottom" constant="8" id="7SF-iy-Nxb"/>
-                            <constraint firstItem="1sd-FO-dN0" firstAttribute="top" secondItem="Pc6-bM-84F" secondAttribute="bottom" constant="8" id="7z1-cz-PiX"/>
                             <constraint firstItem="oKn-q0-ZXj" firstAttribute="top" secondItem="gJ7-hr-Zfp" secondAttribute="bottom" constant="94" id="BMK-KI-SZt"/>
                             <constraint firstItem="Ukl-Ws-wzG" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="DZv-of-JAR"/>
                             <constraint firstItem="4tB-br-E3N" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="GcQ-Un-4gq"/>
                             <constraint firstItem="kSO-w9-eaN" firstAttribute="top" secondItem="Ukl-Ws-wzG" secondAttribute="bottom" constant="8" id="HOa-0c-wa7"/>
                             <constraint firstItem="kSO-w9-eaN" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="SNM-MA-Gqs"/>
-                            <constraint firstItem="gJ7-hr-Zfp" firstAttribute="top" secondItem="1sd-FO-dN0" secondAttribute="bottom" constant="75" id="VMq-1K-hug"/>
                             <constraint firstItem="ywv-QD-1Ku" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="Y6K-EC-paT"/>
                             <constraint firstItem="Pc6-bM-84F" firstAttribute="top" secondItem="kSO-w9-eaN" secondAttribute="bottom" constant="8" id="ZsN-jH-tBx"/>
                             <constraint firstItem="Ukl-Ws-wzG" firstAttribute="top" secondItem="ywv-QD-1Ku" secondAttribute="bottom" constant="8" id="bHC-th-gcA"/>
                             <constraint firstItem="dWz-5m-Uil" firstAttribute="top" secondItem="K8p-4w-5eX" secondAttribute="bottom" id="dHt-Y0-4RN"/>
-                            <constraint firstItem="1sd-FO-dN0" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="etz-o5-3tR"/>
                             <constraint firstItem="Pc6-bM-84F" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="iDk-N1-GDe"/>
                             <constraint firstItem="ywv-QD-1Ku" firstAttribute="top" secondItem="AId-32-Pwt" secondAttribute="bottom" constant="25" id="lJH-Fq-7wf"/>
                             <constraint firstItem="dWz-5m-Uil" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="tPP-Ac-75g"/>
+                            <constraint firstItem="gJ7-hr-Zfp" firstAttribute="top" secondItem="Pc6-bM-84F" secondAttribute="bottom" constant="113" id="x0N-br-2kB"/>
                             <constraint firstItem="AId-32-Pwt" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="zGt-6h-Tay"/>
                         </constraints>
                     </view>
@@ -119,8 +110,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zI7-vn-fno" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ufi-Tr-WxQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1618" y="187"/>
+            <point key="canvasLocation" x="-996" y="187"/>
         </scene>
         <!--Restaurant Sign Up View Controller-->
         <scene sceneID="fNU-k4-BLE">
@@ -171,24 +163,10 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ih-0Z-Sw6">
-                                <rect key="frame" x="129.5" y="362" width="116" height="30"/>
-                                <state key="normal" title="Restaurant Login"/>
+                                <rect key="frame" x="139.5" y="362" width="96" height="30"/>
+                                <state key="normal" title="Back To Login"/>
                                 <connections>
-                                    <action selector="goToRestaurantLogin:" destination="1d0-IX-BCi" eventType="touchUpInside" id="XNF-j5-Y6K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkW-Q9-W4m">
-                                <rect key="frame" x="124.5" y="400" width="126" height="30"/>
-                                <state key="normal" title="Login as customer"/>
-                                <connections>
-                                    <action selector="goToCustomerLogin:" destination="1d0-IX-BCi" eventType="touchUpInside" id="Moc-Xd-a4c"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8O-Ly-3DS">
-                                <rect key="frame" x="117.5" y="438" width="140" height="30"/>
-                                <state key="normal" title="Sign up as customer"/>
-                                <connections>
-                                    <action selector="goToCustomerSignUp:" destination="1d0-IX-BCi" eventType="touchUpInside" id="UgE-MH-diW"/>
+                                    <segue destination="mg3-YP-JaZ" kind="unwind" unwindAction="prepareToUnwindToRestaurantLoginVCWithSegue:" id="yE8-4q-o7z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-4F-Q98">
@@ -203,23 +181,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="gkW-Q9-W4m" firstAttribute="top" secondItem="9Ih-0Z-Sw6" secondAttribute="bottom" constant="8" id="3Fm-5q-2g0"/>
                             <constraint firstItem="uBw-KJ-KBB" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="AN6-fr-uSx"/>
-                            <constraint firstItem="gkW-Q9-W4m" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="CJM-q4-MTD"/>
                             <constraint firstItem="uBw-KJ-KBB" firstAttribute="top" secondItem="Pwh-Rm-yzm" secondAttribute="bottom" constant="8" id="LD3-KY-rm1"/>
                             <constraint firstItem="c3G-eO-uj2" firstAttribute="top" secondItem="ACa-4F-Q98" secondAttribute="bottom" constant="94" id="Lfo-7T-9tw"/>
-                            <constraint firstItem="v8O-Ly-3DS" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="Pmx-bZ-Qcw"/>
                             <constraint firstItem="KNE-yJ-O3X" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="Tqa-mM-01R"/>
                             <constraint firstItem="9gG-kT-7tg" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="Yke-O8-Fbv"/>
                             <constraint firstItem="9gG-kT-7tg" firstAttribute="top" secondItem="KNE-yJ-O3X" secondAttribute="bottom" constant="8" id="YuT-SC-lcK"/>
                             <constraint firstItem="KNE-yJ-O3X" firstAttribute="top" secondItem="uBw-KJ-KBB" secondAttribute="bottom" constant="25" id="Zfz-ck-UdY"/>
                             <constraint firstItem="7LQ-XF-4uz" firstAttribute="top" secondItem="UPd-UM-iuQ" secondAttribute="bottom" id="aAN-mI-KAz"/>
-                            <constraint firstItem="ACa-4F-Q98" firstAttribute="top" secondItem="v8O-Ly-3DS" secondAttribute="bottom" constant="75" id="eBU-pj-8E9"/>
                             <constraint firstItem="Pwh-Rm-yzm" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="fGK-Zm-03a"/>
                             <constraint firstItem="7LQ-XF-4uz" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="j3v-0x-4K4"/>
                             <constraint firstItem="9Ih-0Z-Sw6" firstAttribute="top" secondItem="9gG-kT-7tg" secondAttribute="bottom" constant="8" id="mce-mU-WvF"/>
                             <constraint firstItem="9Ih-0Z-Sw6" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="mp3-h6-5jO"/>
-                            <constraint firstItem="v8O-Ly-3DS" firstAttribute="top" secondItem="gkW-Q9-W4m" secondAttribute="bottom" constant="8" id="oBL-Rw-meP"/>
+                            <constraint firstItem="ACa-4F-Q98" firstAttribute="top" secondItem="9Ih-0Z-Sw6" secondAttribute="bottom" constant="151" id="uPn-3u-MkI"/>
                             <constraint firstItem="ACa-4F-Q98" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="xQn-w2-keo"/>
                         </constraints>
                     </view>
@@ -229,8 +203,82 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U89-0Q-Bq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mg3-YP-JaZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-967" y="187"/>
+            <point key="canvasLocation" x="-1705" y="187"/>
+        </scene>
+        <!--Customer Or Restaurant View Controller-->
+        <scene sceneID="hml-ID-Zd3">
+            <objects>
+                <viewController id="aqW-Ia-A1u" customClass="CustomerOrRestaurantViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bGz-rp-z37"/>
+                        <viewControllerLayoutGuide type="bottom" id="ar4-4u-nfc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gYr-95-HXw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Hostess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-pt-tXX">
+                                <rect key="frame" x="105" y="43" width="165" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rit-Oy-DPm">
+                                <rect key="frame" x="172" y="196" width="30" height="30"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cv-Aw-zHw">
+                                <rect key="frame" x="166" y="74" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owd-L4-T5E">
+                                <rect key="frame" x="0.0" y="374.5" width="375" height="292.5"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Restaurants">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MWj-SO-sgT" kind="presentation" id="JJ6-fU-TzC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGc-uL-FhX">
+                                <rect key="frame" x="0.0" y="82" width="375" height="292.5"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Customers"/>
+                                <connections>
+                                    <segue destination="8tF-Rn-oi1" kind="presentation" identifier="Customers" id="QwK-8r-4Fd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="owd-L4-T5E" firstAttribute="bottom" secondItem="ar4-4u-nfc" secondAttribute="top" id="6Et-O8-8HJ"/>
+                            <constraint firstItem="owd-L4-T5E" firstAttribute="top" secondItem="TGc-uL-FhX" secondAttribute="bottom" id="85d-Ua-M4g"/>
+                            <constraint firstItem="2cv-Aw-zHw" firstAttribute="leading" secondItem="gYr-95-HXw" secondAttribute="leading" constant="166" id="9Jb-uv-DVw"/>
+                            <constraint firstItem="QE0-pt-tXX" firstAttribute="top" secondItem="bGz-rp-z37" secondAttribute="bottom" constant="23" id="FSf-se-s6K"/>
+                            <constraint firstItem="rit-Oy-DPm" firstAttribute="top" secondItem="gYr-95-HXw" secondAttribute="top" constant="196" id="LKm-or-6xy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TGc-uL-FhX" secondAttribute="trailing" constant="-16" id="MWS-VK-aH2"/>
+                            <constraint firstItem="owd-L4-T5E" firstAttribute="trailing" secondItem="TGc-uL-FhX" secondAttribute="trailing" id="X7m-0F-Bzk"/>
+                            <constraint firstItem="TGc-uL-FhX" firstAttribute="centerX" secondItem="rit-Oy-DPm" secondAttribute="centerX" id="cac-SM-4s8"/>
+                            <constraint firstItem="TGc-uL-FhX" firstAttribute="centerX" secondItem="gYr-95-HXw" secondAttribute="centerX" id="cio-Jq-3Ds"/>
+                            <constraint firstItem="owd-L4-T5E" firstAttribute="height" secondItem="TGc-uL-FhX" secondAttribute="height" id="eHV-ca-94J"/>
+                            <constraint firstItem="TGc-uL-FhX" firstAttribute="top" secondItem="2cv-Aw-zHw" secondAttribute="bottom" constant="8" symbolic="YES" id="ifj-cj-rVK"/>
+                            <constraint firstItem="TGc-uL-FhX" firstAttribute="top" secondItem="QE0-pt-tXX" secondAttribute="bottom" constant="10" id="sqQ-J6-pvS"/>
+                            <constraint firstItem="TGc-uL-FhX" firstAttribute="centerX" secondItem="QE0-pt-tXX" secondAttribute="centerX" id="xs4-u8-5vr"/>
+                            <constraint firstItem="TGc-uL-FhX" firstAttribute="leading" secondItem="gYr-95-HXw" secondAttribute="leadingMargin" constant="-16" id="yjV-Gm-ilC"/>
+                            <constraint firstItem="owd-L4-T5E" firstAttribute="leading" secondItem="TGc-uL-FhX" secondAttribute="leading" id="zRv-Ks-1ac"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vlq-co-Rye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-658.39999999999998" y="-509.59520239880067"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -280,25 +328,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-ZR-E4P">
-                                <rect key="frame" x="121.5" y="438" width="132" height="30"/>
-                                <state key="normal" title="Login as restaurant"/>
-                                <connections>
-                                    <action selector="goToRestaurantLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ka-dH-kCT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQI-4I-9vb">
-                                <rect key="frame" x="168.5" y="362" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="139.5" y="362" width="96" height="30"/>
+                                <state key="normal" title="Back To Login"/>
                                 <connections>
-                                    <action selector="goToCustomerLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6u4-e7-4UB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPZ-xv-FtO">
-                                <rect key="frame" x="114.5" y="400" width="146" height="30"/>
-                                <state key="normal" title="Sign up as restaurant"/>
-                                <connections>
-                                    <action selector="goToRestaurantSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vK-27-qT6"/>
+                                    <segue destination="DSM-Yl-y7K" kind="unwind" unwindAction="prepareToUnwindToLoginVCWithSegue:" id="cLV-Vd-glr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9co-qh-VHF">
@@ -314,18 +348,14 @@
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Whl-PZ-rID" firstAttribute="top" secondItem="YhY-Kz-bJS" secondAttribute="bottom" constant="25" id="2Ha-OR-fg7"/>
-                            <constraint firstItem="JPZ-xv-FtO" firstAttribute="top" secondItem="BQI-4I-9vb" secondAttribute="bottom" constant="8" id="2u6-sH-cxR"/>
                             <constraint firstItem="faS-tu-X7f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Bj-Oi-NWi"/>
-                            <constraint firstItem="7d0-ZR-E4P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Ss-1K-HLc"/>
                             <constraint firstItem="BQI-4I-9vb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4vJ-WX-ryN"/>
                             <constraint firstItem="BQI-4I-9vb" firstAttribute="top" secondItem="iyh-Ig-5zT" secondAttribute="bottom" constant="8" id="9C3-JF-PtV"/>
-                            <constraint firstItem="9co-qh-VHF" firstAttribute="top" secondItem="7d0-ZR-E4P" secondAttribute="bottom" constant="75" id="Dhd-A4-ccf"/>
+                            <constraint firstItem="9co-qh-VHF" firstAttribute="top" secondItem="BQI-4I-9vb" secondAttribute="bottom" constant="151" id="EFL-0w-anv"/>
                             <constraint firstItem="iyh-Ig-5zT" firstAttribute="top" secondItem="Whl-PZ-rID" secondAttribute="bottom" constant="8" id="Geg-r3-ges"/>
                             <constraint firstItem="iyh-Ig-5zT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jc6-ib-C5C"/>
-                            <constraint firstItem="JPZ-xv-FtO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QL6-WY-4CU"/>
                             <constraint firstItem="YhY-Kz-bJS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tmi-Xb-LCT"/>
                             <constraint firstItem="Whl-PZ-rID" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZgP-o4-VcP"/>
-                            <constraint firstItem="7d0-ZR-E4P" firstAttribute="top" secondItem="JPZ-xv-FtO" secondAttribute="bottom" constant="8" id="afG-Ei-KLG"/>
                             <constraint firstItem="faS-tu-X7f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bC7-FQ-LZz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9co-qh-VHF" secondAttribute="bottom" constant="94" id="dKk-Yn-Mhr"/>
                             <constraint firstItem="mGb-yH-RFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i9m-kG-UN1"/>
@@ -339,8 +369,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="DSM-Yl-y7K" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-308" y="187"/>
+            <point key="canvasLocation" x="366" y="199"/>
         </scene>
         <!--Edit Restaurant View Controller-->
         <scene sceneID="yX5-8p-54U">
@@ -440,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1d-AL-4LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1618" y="848"/>
+            <point key="canvasLocation" x="-1706" y="847"/>
         </scene>
         <!--Add Restaurant View Controller-->
         <scene sceneID="c1w-De-Yo7">
@@ -601,6 +632,7 @@
                         <outlet property="restaurantAddressLabel" destination="bbw-EH-9KY" id="4e4-VV-Ra9"/>
                         <outlet property="restaurantImage" destination="Fhe-eq-g82" id="upQ-6V-eZ9"/>
                         <outlet property="restaurantNameLabel" destination="sbP-9C-W4B" id="1tR-Eh-pwp"/>
+                        <segue destination="BJ2-p6-AbZ" kind="presentation" identifier="EditRestaurant" id="rRX-H5-kKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFe-Yx-5PC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -838,21 +870,14 @@
                                 <rect key="frame" x="161.5" y="374" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <action selector="goToCustomerSignUp:" destination="8tF-Rn-oi1" eventType="touchUpInside" id="cFw-CS-tmV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7v-f6-3Tj">
-                                <rect key="frame" x="121.5" y="450" width="132" height="30"/>
-                                <state key="normal" title="Login as restaurant"/>
-                                <connections>
-                                    <action selector="goToRestaurantLogin:" destination="8tF-Rn-oi1" eventType="touchUpInside" id="0ok-Za-pyc"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="CustomerSignUp" id="VM4-b2-lXn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-re-SDa">
-                                <rect key="frame" x="112.5" y="412" width="150" height="30"/>
-                                <state key="normal" title="Sign up as restaurant "/>
+                                <rect key="frame" x="170.5" y="412" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="goToRestaurantSignUp:" destination="8tF-Rn-oi1" eventType="touchUpInside" id="wnQ-r7-N9t"/>
+                                    <segue destination="7Cp-Rz-ZjD" kind="unwind" unwindAction="prepareToUnwindToCustomerOrRestaurantVCWithSegue:" id="EWK-F9-pm4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-Sv-GPZ">
@@ -867,6 +892,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="UbW-Sv-GPZ" firstAttribute="top" secondItem="7AE-re-SDa" secondAttribute="bottom" constant="101" id="0Yf-Rz-TqN"/>
                             <constraint firstItem="XG4-er-iGq" firstAttribute="top" secondItem="eXm-mD-l2f" secondAttribute="bottom" constant="8" id="2A1-Cu-af8"/>
                             <constraint firstItem="Atk-qi-eGu" firstAttribute="top" secondItem="qfH-1t-4ZN" secondAttribute="bottom" constant="8" id="83c-QY-HFn"/>
                             <constraint firstItem="XG4-er-iGq" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="Ftc-fh-nLb"/>
@@ -876,12 +902,9 @@
                             <constraint firstItem="Sod-Tr-OCX" firstAttribute="top" secondItem="jnc-aP-QIL" secondAttribute="bottom" constant="8" id="XpL-Je-g0c"/>
                             <constraint firstItem="Atk-qi-eGu" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="ZSM-K1-5pr"/>
                             <constraint firstItem="jnc-aP-QIL" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="ZaR-zB-2P1"/>
-                            <constraint firstItem="K7v-f6-3Tj" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="Zql-EW-hUe"/>
-                            <constraint firstItem="UbW-Sv-GPZ" firstAttribute="top" secondItem="K7v-f6-3Tj" secondAttribute="bottom" constant="63" id="dRJ-J6-nnO"/>
                             <constraint firstItem="qfH-1t-4ZN" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="j2W-Io-zs8"/>
                             <constraint firstItem="QBb-pw-DiS" firstAttribute="top" secondItem="Atk-qi-eGu" secondAttribute="bottom" constant="8" id="l1b-mk-kpU"/>
                             <constraint firstItem="7AE-re-SDa" firstAttribute="top" secondItem="QBb-pw-DiS" secondAttribute="bottom" constant="8" id="mvN-io-PT6"/>
-                            <constraint firstItem="K7v-f6-3Tj" firstAttribute="top" secondItem="7AE-re-SDa" secondAttribute="bottom" constant="8" id="pUE-L4-Oms"/>
                             <constraint firstItem="QBb-pw-DiS" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="ukx-y2-QSy"/>
                             <constraint firstItem="UbW-Sv-GPZ" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="zK4-jy-tMg"/>
                             <constraint firstItem="qfH-1t-4ZN" firstAttribute="top" secondItem="Sod-Tr-OCX" secondAttribute="bottom" constant="31" id="zZU-C8-dA0"/>
@@ -893,8 +916,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00E-6H-HZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7Cp-Rz-ZjD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="366" y="187"/>
+            <point key="canvasLocation" x="-311" y="187"/>
         </scene>
     </scenes>
 </document>

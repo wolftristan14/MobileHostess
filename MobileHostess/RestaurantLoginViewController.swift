@@ -19,18 +19,18 @@ class RestaurantLoginViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    @IBAction func goToRestaurantSignUp(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantSignUp")
-        self.present(vc!, animated: true, completion: nil)
+   
+ 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RestaurantSignUp" {
+            let restaurantSignUpViewController:RestaurantSignUpViewController = segue.destination as! RestaurantSignUpViewController
+        }
     }
-    @IBAction func goToCustomerLogin(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-        self.present(vc!, animated: true, completion: nil)
+    @IBAction func prepareToUnwindToRestaurantLoginVC(segue:UIStoryboardSegue) {
+        
     }
-    @IBAction func goToCustomerSignUp(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MobileHostess.SignUpViewController")
-        self.present(vc!, animated: true, completion: nil)
-    }
+ 
     
     @IBAction func restaurantLogin(_ sender: Any) {
         

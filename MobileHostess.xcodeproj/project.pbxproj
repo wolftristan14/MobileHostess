@@ -12,6 +12,7 @@
 		A116C0721E803A1F00E69F13 /* MobileHostess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A116C0701E803A1F00E69F13 /* MobileHostess.xcdatamodeld */; };
 		A116C0741E803A1F00E69F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A116C0731E803A1F00E69F13 /* Assets.xcassets */; };
 		A116C0771E803A1F00E69F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A116C0751E803A1F00E69F13 /* LaunchScreen.storyboard */; };
+		A15F44BC1EAD1062001170FD /* CustomerOrRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F44BB1EAD1062001170FD /* CustomerOrRestaurantViewController.swift */; };
 		A17B4CEC1E80496200CC31CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B4CEB1E80496200CC31CF /* SignUpViewController.swift */; };
 		A17B4CEE1E805ACD00CC31CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B4CED1E805ACD00CC31CF /* LoginViewController.swift */; };
 		A1A233C51E82F6FA009561FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233C41E82F6FA009561FB /* HomeViewController.swift */; };
@@ -36,6 +37,7 @@
 		A116C0761E803A1F00E69F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A116C0781E803A1F00E69F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A15CF7857A4DA933F4D692D9 /* Pods-MobileHostess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHostess.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess.release.xcconfig"; sourceTree = "<group>"; };
+		A15F44BB1EAD1062001170FD /* CustomerOrRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerOrRestaurantViewController.swift; sourceTree = "<group>"; };
 		A17B4CEB1E80496200CC31CF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A17B4CED1E805ACD00CC31CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1A233C41E82F6FA009561FB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A116C0691E803A1F00E69F13 /* AppDelegate.swift */,
+				A15F44BB1EAD1062001170FD /* CustomerOrRestaurantViewController.swift */,
 				A17B4CEB1E80496200CC31CF /* SignUpViewController.swift */,
 				A17B4CED1E805ACD00CC31CF /* LoginViewController.swift */,
 				A1A233C41E82F6FA009561FB /* HomeViewController.swift */,
@@ -247,6 +250,7 @@
 			files = (
 				A1A233C71E82F85D009561FB /* HomeTableViewCell.swift in Sources */,
 				A1A233C51E82F6FA009561FB /* HomeViewController.swift in Sources */,
+				A15F44BC1EAD1062001170FD /* CustomerOrRestaurantViewController.swift in Sources */,
 				A1A233D31E832A9D009561FB /* EditRestaurantViewController.swift in Sources */,
 				A17B4CEE1E805ACD00CC31CF /* LoginViewController.swift in Sources */,
 				A17B4CEC1E80496200CC31CF /* SignUpViewController.swift in Sources */,
