@@ -128,7 +128,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
 
     func startUpdateTimer()  {
-        let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
+        let timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
         
             print("timeSinceLastUpdate has been updated")
             let key = self.rootRef.child((FIRAuth.auth()?.currentUser?.uid)!).key
