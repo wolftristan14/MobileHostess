@@ -20,10 +20,12 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var waitTimeTextField: UITextField!
     var waitTimesDictionary:[String: AnyObject] = [:]
     var categoryAndTimeArray = [(String, String)]()
+    
 
     var categoryArray:[String]!
     var timeArray:[String]!
     var currentCategory:String!
+    var updateNumber = 0
   
     let rootRef = FIRDatabase.database().reference(withPath: "Restaurants")
 
@@ -119,10 +121,29 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         updateRef.child("waitTimes").updateChildValues([self.currentCategory!: waitTime])
             self.waitTimeTextField.text?.removeAll()
             viewDidLoad()
+            self.updateNumber = 0
+            startUpdateTimer()
 
         }
     }
 
+    func startUpdateTimer()  {
+        let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
+        
+            print("timeSinceLastUpdate has been updated")
+            let key = self.rootRef.child((FIRAuth.auth()?.currentUser?.uid)!).key
+            let updateRef = self.rootRef.child("\(key)")
+            
+            updateRef.updateChildValues(["timeSinceLastUpdate": self.updateNumber])
+            self.updateNumber += 1
+            
+
+
+        
+        
+        })
+        timer.fire()
+    }
  
     
 }

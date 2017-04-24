@@ -23,20 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRDatabase.database().persistenceEnabled = true
 
         
-       if UserDefaults.standard.bool(forKey: "FirstLaunch"){
-            
-        } else {
-            UserDefaults.standard.set(true, forKey: "FirstLaunch")
-            UserDefaults.standard.synchronize()
-            
-            
-            
-            self.window = UIWindow.init(frame: UIScreen.main.bounds)
-            let storyboard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let signupViewController:SignUpViewController = storyboard.instantiateViewController(withIdentifier: NSStringFromClass(SignUpViewController.self)) as! SignUpViewController
-            self.window?.rootViewController = signupViewController
-            self.window?.makeKeyAndVisible()
-        }
+       
         // Override point for customization after application launch.
         return true
     }

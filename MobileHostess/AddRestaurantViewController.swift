@@ -115,7 +115,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         
   
         
-        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL, uuid: (FIRAuth.auth()?.currentUser?.uid)!)
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL, uuid: (FIRAuth.auth()?.currentUser?.uid)!, timeSinceLastUpdate: 0)
         
         restaurantRef.setValue(restaurant.toAnyObject())
         
