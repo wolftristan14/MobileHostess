@@ -18,11 +18,12 @@ class DetailsViewController:UIViewController {
     @IBOutlet weak var restaurantAddressLabel: UILabel!
     @IBOutlet weak var restaurantImage: UIImageView!
     var key:String!
+    @IBOutlet weak var lastUpdateTimeLabel: UILabel!
     
     var restaurantName:String!
     var restaurantWaitTime:String!
     var restaurantAddress:String!
-   
+    var lastUpdateTime:String!
     var imageURL:String!
     var uuid:String!
     var waitTimesDictionary:[String: AnyObject] = [:]
@@ -39,6 +40,7 @@ class DetailsViewController:UIViewController {
         restaurantNameLabel.text = restaurantName
         restaurantAddressLabel.text = restaurantAddress
         restaurantWaitTimeLabel.text = restaurantWaitTime
+        lastUpdateTimeLabel.text = lastUpdateTime
         
         let url = URL(string: imageURL)
 

@@ -782,11 +782,24 @@
                                     <action selector="backToHomeVC:" destination="C0O-jH-MOr" eventType="touchUpInside" id="g6y-79-ies"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time of last update" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNi-NO-TcS">
+                                <rect key="frame" x="16" y="503" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Of Last Update:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wns-qt-m6t">
+                                <rect key="frame" x="106" y="474" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZYE-9v-Vgy" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="04P-pZ-I9S"/>
                             <constraint firstItem="Xdb-Bd-vf2" firstAttribute="centerX" secondItem="QD3-DD-kWg" secondAttribute="centerX" id="4Hp-eH-2UP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yNi-NO-TcS" secondAttribute="leading" id="51n-MR-oUP"/>
                             <constraint firstItem="2WM-e9-15F" firstAttribute="top" secondItem="ZYE-9v-Vgy" secondAttribute="bottom" constant="20" id="A4y-wu-ajm"/>
                             <constraint firstItem="5Jx-7g-fjz" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="Hy9-SW-d4g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QD3-DD-kWg" secondAttribute="trailing" constant="-16" id="Iqo-61-YEw"/>
@@ -797,15 +810,21 @@
                             <constraint firstItem="Xdb-Bd-vf2" firstAttribute="top" secondItem="QD3-DD-kWg" secondAttribute="bottom" constant="16" id="X2c-3w-wJD"/>
                             <constraint firstItem="Sch-x8-DOy" firstAttribute="top" secondItem="5Jx-7g-fjz" secondAttribute="bottom" constant="66" id="X46-od-g27"/>
                             <constraint firstItem="Fk6-Qi-Gad" firstAttribute="top" secondItem="Xdb-Bd-vf2" secondAttribute="bottom" constant="8" symbolic="YES" id="YBT-gF-gbk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yNi-NO-TcS" secondAttribute="trailing" id="aQz-Ra-YrB"/>
                             <constraint firstItem="QD3-DD-kWg" firstAttribute="leading" secondItem="MeO-Jq-7B1" secondAttribute="leadingMargin" constant="-16" id="d7U-xQ-mIn"/>
                             <constraint firstItem="Sch-x8-DOy" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="dPv-7J-hJd"/>
+                            <constraint firstItem="wns-qt-m6t" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="fvm-L3-754"/>
+                            <constraint firstItem="yNi-NO-TcS" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="geL-xC-bXf"/>
+                            <constraint firstItem="wns-qt-m6t" firstAttribute="top" secondItem="Sch-x8-DOy" secondAttribute="bottom" constant="24" id="guV-ZW-O6L"/>
                             <constraint firstItem="Fk6-Qi-Gad" firstAttribute="leading" secondItem="MeO-Jq-7B1" secondAttribute="leadingMargin" constant="71" id="i1o-JG-aB8"/>
                             <constraint firstItem="Xdb-Bd-vf2" firstAttribute="leading" secondItem="MeO-Jq-7B1" secondAttribute="leadingMargin" constant="47" id="loU-T8-pt9"/>
                             <constraint firstItem="5Jx-7g-fjz" firstAttribute="top" secondItem="Fk6-Qi-Gad" secondAttribute="bottom" constant="19" id="qgc-8v-yOZ"/>
+                            <constraint firstItem="yNi-NO-TcS" firstAttribute="top" secondItem="wns-qt-m6t" secondAttribute="bottom" constant="8" id="xDn-8Z-UyY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ffE-Pb-iJO"/>
                     <connections>
+                        <outlet property="lastUpdateTimeLabel" destination="yNi-NO-TcS" id="4Cu-CR-I2x"/>
                         <outlet property="partySizeSegmentedControl" destination="QD3-DD-kWg" id="LCL-WC-W6S"/>
                         <outlet property="restaurantAddressLabel" destination="5Jx-7g-fjz" id="Pyt-s0-XD3"/>
                         <outlet property="restaurantImage" destination="Fk6-Qi-Gad" id="F9E-vF-jue"/>
@@ -815,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn9-vB-AjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="847"/>
+            <point key="canvasLocation" x="1048.8" y="846.9265367316342"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="8p6-MN-wiB">

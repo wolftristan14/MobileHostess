@@ -103,7 +103,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             detailsViewController.restaurantWaitTime = "\(detailWaitTime) Mins"
             detailsViewController.uuid = restaurant.uuid
             detailsViewController.imageURL = restaurant.imageURL
-            
+            detailsViewController.lastUpdateTime = restaurant.timeSinceLastUpdate
             
             detailsViewController.key = restaurant.key
             

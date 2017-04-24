@@ -25,7 +25,6 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     var categoryArray:[String]!
     var timeArray:[String]!
     var currentCategory:String!
-    var updateNumber = 0
   
     let rootRef = FIRDatabase.database().reference(withPath: "Restaurants")
 
@@ -48,6 +47,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             self.restaurantNameLabel.text = userRestaurant.name
             self.restaurantAddressLabel.text = userRestaurant.address
             self.waitTimesDictionary.removeAll()
+            
             for (category,time) in userRestaurant.waitTimes! {
                 
                 
@@ -116,34 +116,22 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         
         
         let updateRef = rootRef.child("\(key)")
-        
+            let currentTimeTimeStamp = Date.init(timeIntervalSinceNow: -7200)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let timeStamp = dateFormatter.string(from: currentTimeTimeStamp)
+            
+            
         
         updateRef.child("waitTimes").updateChildValues([self.currentCategory!: waitTime])
+        updateRef.updateChildValues(["timeSinceLastUpdate": timeStamp])
             self.waitTimeTextField.text?.removeAll()
             viewDidLoad()
-            self.updateNumber = 0
-            startUpdateTimer()
+        
 
         }
     }
 
-    func startUpdateTimer()  {
-        let timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
-        
-            print("timeSinceLastUpdate has been updated")
-            let key = self.rootRef.child((FIRAuth.auth()?.currentUser?.uid)!).key
-            let updateRef = self.rootRef.child("\(key)")
-            
-            updateRef.updateChildValues(["timeSinceLastUpdate": self.updateNumber])
-            self.updateNumber += 1
-            
-
-
-        
-        
-        })
-        timer.fire()
-    }
- 
+    
     
 }

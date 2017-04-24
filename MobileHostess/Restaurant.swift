@@ -19,12 +19,12 @@ struct Restaurant {
     var imageURL:String?
     var image:UIImage?
     var uuid:String?
-    var timeSinceLastUpdate:Int?
+    var timeSinceLastUpdate:String?
     
     let ref: FIRDatabaseReference?
     var key:String
     
-    init(name: String, address: String, waitTimes: [String: AnyObject], key: String = "", imageURL: String, uuid:String, timeSinceLastUpdate: Int) {
+    init(name: String, address: String, waitTimes: [String: AnyObject], key: String = "", imageURL: String, uuid:String, timeSinceLastUpdate: String) {
         
         self.name = name
         self.address = address
@@ -45,14 +45,14 @@ struct Restaurant {
         time = waitTimes?["time"] as? String
         imageURL = snapshotValue?["imageURL"] as? String
         uuid = snapshotValue?["uuid"] as? String
-        timeSinceLastUpdate = snapshotValue?["timeSinceLastUpdate"] as? Int
+        timeSinceLastUpdate = snapshotValue?["timeSinceLastUpdate"] as? String
         key = snapshot.key
         ref = snapshot.ref
         
     }
     
     func toAnyObject() -> Any {
-        return ["name": name ?? "", "address": address ?? "", "waitTimes": waitTimes!, "imageURL": imageURL ?? "", "uuid": uuid ?? "", "timeSinceLastUpdate": timeSinceLastUpdate ?? 0]
+        return ["name": name ?? "", "address": address ?? "", "waitTimes": waitTimes!, "imageURL": imageURL ?? "", "uuid": uuid ?? "", "timeSinceLastUpdate": timeSinceLastUpdate ?? "error getting date"]
     }
     
 }

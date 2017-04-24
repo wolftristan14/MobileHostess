@@ -113,9 +113,13 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
             address = self.restaurantAddressLabel.text
         }
         
+        let currentTimeTimeStamp = Date.init(timeIntervalSinceNow: -7200)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let timeStamp = dateFormatter.string(from: currentTimeTimeStamp)
   
         
-        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL, uuid: (FIRAuth.auth()?.currentUser?.uid)!, timeSinceLastUpdate: 0)
+        let restaurant = Restaurant(name: name, address: address, waitTimes: waitTimes, key: key, imageURL: imageURL, uuid: (FIRAuth.auth()?.currentUser?.uid)!, timeSinceLastUpdate: timeStamp)
         
         restaurantRef.setValue(restaurant.toAnyObject())
         
