@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>To show you restaurants that are close to you.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To select a photo for your restaurant</string>
+	<string>To select a photo for your restaurant.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>To take a picture of your restaurant</string>
+	<string>To take a picture of your restaurant.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

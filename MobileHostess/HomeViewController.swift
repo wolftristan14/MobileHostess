@@ -8,12 +8,15 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     var restaurantArray:[Restaurant] = []
     let ref = FIRDatabase.database().reference(withPath: "Restaurants")
     var passedImage:UIImage!
+    let locationManager = CLLocationManager()
 
 
     
@@ -22,7 +25,15 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.locationManager.requestAlwaysAuthorization()
         
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
      ref.observe(.value, with: { snapshot in
         
