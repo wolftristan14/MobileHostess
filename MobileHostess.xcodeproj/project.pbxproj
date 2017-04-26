@@ -13,6 +13,8 @@
 		A116C0741E803A1F00E69F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A116C0731E803A1F00E69F13 /* Assets.xcassets */; };
 		A116C0771E803A1F00E69F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A116C0751E803A1F00E69F13 /* LaunchScreen.storyboard */; };
 		A15F44BC1EAD1062001170FD /* CustomerOrRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F44BB1EAD1062001170FD /* CustomerOrRestaurantViewController.swift */; };
+		A15F44BE1EB1025C001170FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A15F44BD1EB1025C001170FD /* MapKit.framework */; };
+		A15F44C01EB108A3001170FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F44BF1EB108A3001170FD /* MapViewController.swift */; };
 		A17B4CEC1E80496200CC31CF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B4CEB1E80496200CC31CF /* SignUpViewController.swift */; };
 		A17B4CEE1E805ACD00CC31CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B4CED1E805ACD00CC31CF /* LoginViewController.swift */; };
 		A1A233C51E82F6FA009561FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A233C41E82F6FA009561FB /* HomeViewController.swift */; };
@@ -38,6 +40,8 @@
 		A116C0781E803A1F00E69F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A15CF7857A4DA933F4D692D9 /* Pods-MobileHostess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHostess.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess.release.xcconfig"; sourceTree = "<group>"; };
 		A15F44BB1EAD1062001170FD /* CustomerOrRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerOrRestaurantViewController.swift; sourceTree = "<group>"; };
+		A15F44BD1EB1025C001170FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A15F44BF1EB108A3001170FD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A17B4CEB1E80496200CC31CF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A17B4CED1E805ACD00CC31CF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1A233C41E82F6FA009561FB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15F44BE1EB1025C001170FD /* MapKit.framework in Frameworks */,
 				EB866B94C488FFB867BA6D93 /* Pods_MobileHostess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +101,7 @@
 			children = (
 				A116C0691E803A1F00E69F13 /* AppDelegate.swift */,
 				A15F44BB1EAD1062001170FD /* CustomerOrRestaurantViewController.swift */,
+				A15F44BF1EB108A3001170FD /* MapViewController.swift */,
 				A17B4CEB1E80496200CC31CF /* SignUpViewController.swift */,
 				A17B4CED1E805ACD00CC31CF /* LoginViewController.swift */,
 				A1A233C41E82F6FA009561FB /* HomeViewController.swift */,
@@ -119,6 +125,7 @@
 		D0D3D10E863767B5436246DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A15F44BD1EB1025C001170FD /* MapKit.framework */,
 				A83389C4DE1551CB9F3C4C70 /* Pods_MobileHostess.framework */,
 			);
 			name = Frameworks;
@@ -160,6 +167,11 @@
 					A116C0651E803A1E00E69F13 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -261,6 +273,7 @@
 				A116C06A1E803A1F00E69F13 /* AppDelegate.swift in Sources */,
 				A1A233CD1E832028009561FB /* AddRestaurantViewController.swift in Sources */,
 				A1A233D11E8324AD009561FB /* RestaurantLoginViewController.swift in Sources */,
+				A15F44C01EB108A3001170FD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

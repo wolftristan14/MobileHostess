@@ -108,6 +108,13 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             detailsViewController.key = restaurant.key
             
         }
+        
+        
+    }
+    
+    @IBAction func performSegueToMap(_ sender: Any) {
+        performSegue(withIdentifier: "map", sender: self)
+        
     }
     
   

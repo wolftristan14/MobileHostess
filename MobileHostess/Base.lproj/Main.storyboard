@@ -372,6 +372,35 @@
             </objects>
             <point key="canvasLocation" x="366" y="199"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="cKo-Lx-JyT">
+            <objects>
+                <viewController id="Xa2-xY-2PO" customClass="MapViewController" customModule="MobileHostess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BRO-Bd-ZcB"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Sg-kw-9sT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vPu-OX-puF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s55-XK-6A5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s55-XK-6A5" firstAttribute="top" secondItem="BRO-Bd-ZcB" secondAttribute="bottom" constant="-20" id="lDI-Je-Yze"/>
+                            <constraint firstAttribute="trailing" secondItem="s55-XK-6A5" secondAttribute="trailing" id="nfN-MG-dn0"/>
+                            <constraint firstItem="s55-XK-6A5" firstAttribute="leading" secondItem="vPu-OX-puF" secondAttribute="leading" id="r5H-QN-t8u"/>
+                            <constraint firstItem="4Sg-kw-9sT" firstAttribute="top" secondItem="s55-XK-6A5" secondAttribute="bottom" id="r8V-HE-sEL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JW0-MQ-q5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088.8" y="197.45127436281859"/>
+        </scene>
         <!--Edit Restaurant View Controller-->
         <scene sceneID="yX5-8p-54U">
             <objects>
@@ -470,7 +499,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1d-AL-4LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1706" y="847"/>
+            <point key="canvasLocation" x="-1706" y="954"/>
         </scene>
         <!--Add Restaurant View Controller-->
         <scene sceneID="c1w-De-Yo7">
@@ -636,7 +665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFe-Yx-5PC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967" y="848"/>
+            <point key="canvasLocation" x="-997" y="965"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="YCk-eB-DB0">
@@ -659,16 +688,9 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="he2-R0-EMV" id="njE-6G-Z2b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aep-hy-ukc">
-                                                    <rect key="frame" x="8" y="0.0" width="81" height="81"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="81" id="5hR-TI-ZFQ"/>
-                                                        <constraint firstAttribute="height" constant="81" id="dJt-sc-Fde"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-Uf-iby">
                                                     <rect key="frame" x="97" y="8" width="133" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -687,6 +709,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aep-hy-ukc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="5hR-TI-ZFQ"/>
+                                                        <constraint firstAttribute="height" constant="81" id="dJt-sc-Fde"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wzD-Hf-biH" firstAttribute="top" secondItem="FiK-Uf-iby" secondAttribute="bottom" constant="22" id="6xA-Yz-xkf"/>
@@ -695,8 +724,8 @@
                                                 <constraint firstItem="BnY-5q-J1i" firstAttribute="leading" secondItem="FiK-Uf-iby" secondAttribute="leading" id="TuB-3E-bnF"/>
                                                 <constraint firstItem="Aep-hy-ukc" firstAttribute="centerY" secondItem="njE-6G-Z2b" secondAttribute="centerY" id="ce9-6u-slV"/>
                                                 <constraint firstItem="wzD-Hf-biH" firstAttribute="leading" secondItem="BnY-5q-J1i" secondAttribute="trailing" priority="250" constant="28" id="fyS-AR-4Dk"/>
-                                                <constraint firstItem="Aep-hy-ukc" firstAttribute="leading" secondItem="njE-6G-Z2b" secondAttribute="leadingMargin" id="g9u-B7-Jnw"/>
-                                                <constraint firstItem="BnY-5q-J1i" firstAttribute="leading" secondItem="Aep-hy-ukc" secondAttribute="trailing" constant="8" symbolic="YES" id="kLw-mO-zLd"/>
+                                                <constraint firstItem="Aep-hy-ukc" firstAttribute="leading" secondItem="njE-6G-Z2b" secondAttribute="leadingMargin" constant="-8" id="g9u-B7-Jnw"/>
+                                                <constraint firstItem="BnY-5q-J1i" firstAttribute="leading" secondItem="Aep-hy-ukc" secondAttribute="trailing" constant="16" id="kLw-mO-zLd"/>
                                                 <constraint firstItem="wzD-Hf-biH" firstAttribute="bottom" secondItem="njE-6G-Z2b" secondAttribute="bottomMargin" id="mBg-Wj-JpM"/>
                                                 <constraint firstItem="BnY-5q-J1i" firstAttribute="baseline" secondItem="wzD-Hf-biH" secondAttribute="baseline" id="nva-IW-b3B"/>
                                             </constraints>
@@ -715,16 +744,33 @@
                                     <outlet property="delegate" destination="laH-zp-fEf" id="x6u-4C-Kqz"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w18-Tt-nQs">
+                                <rect key="frame" x="0.0" y="8" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Nearby Restaurants" id="RTI-Hh-rzN">
+                                        <barButtonItem key="rightBarButtonItem" title="Map" id="XoP-6V-jFZ">
+                                            <connections>
+                                                <action selector="performSegueToMap:" destination="laH-zp-fEf" id="omL-Sw-EPF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="JVK-Zy-tcC" id="2Hb-Sc-fOt"/>
+                        <segue destination="Xa2-xY-2PO" kind="show" identifier="map" id="i1I-av-GgR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOn-Sa-7HR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365.60000000000002" y="846.9265367316342"/>
+            <point key="canvasLocation" x="366" y="954"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="LyR-3g-7wb">
@@ -834,7 +880,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn9-vB-AjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048.8" y="846.9265367316342"/>
+            <point key="canvasLocation" x="1089" y="954"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="8p6-MN-wiB">
