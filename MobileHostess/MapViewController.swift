@@ -53,9 +53,9 @@ class MapViewController:UIViewController, UISearchBarDelegate {
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
             
             
-            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
-            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
-            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
+            //self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
+            //self.mapView.centerCoordinate = self.pointAnnotation.coordinate
+            //self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
         }
     }
     

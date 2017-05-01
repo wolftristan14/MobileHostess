@@ -131,9 +131,6 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         performSegue(withIdentifier: "EditRestaurant", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "map2" {
-            let mapViewController:MapViewController = segue.destination as! MapViewController
-        }
-    }
+ 
+    
 }
