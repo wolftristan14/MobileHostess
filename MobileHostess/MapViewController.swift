@@ -7,9 +7,13 @@
 //
 
 import Foundation
+import Firebase
 import MapKit
 
 class MapViewController:UIViewController, UISearchBarDelegate {
+    
+    let ref = FIRDatabase.database().reference(withPath: "Restaurants")
+
     
     var searchController:UISearchController!
     var annotation:MKAnnotation!
@@ -21,23 +25,35 @@ class MapViewController:UIViewController, UISearchBarDelegate {
     var pinAnnotationView:MKPinAnnotationView!
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        ref.observe(.value, with: { snapshot in
+            
+            var newRestaurants:[Restaurant] = []
+            
+            for item in snapshot.children {
+                
+                let restaurant = Restaurant(snapshot: item as! FIRDataSnapshot)
+                
+                newRestaurants.append(restaurant)
+                
+                self.loadAnnotations(restaurantAddress:restaurant.address!)
 
-  
-    @IBAction func showSearchBar(_ sender: Any) {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.delegate = self
-        present(searchController, animated: true, completion: nil)
+            }
+            
+            
+        }){
+            (error) in
+            print(error.localizedDescription)
+            
+        }
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
-        
-      
-        
+    func loadAnnotations(restaurantAddress:String) {
         localSearchRequest = MKLocalSearchRequest()
-        localSearchRequest.naturalLanguageQuery = searchBar.text
+        localSearchRequest.naturalLanguageQuery = restaurantAddress
         localSearch = MKLocalSearch(request: localSearchRequest)
         localSearch.start { (localSearchResponse, error) -> Void in
             
@@ -49,19 +65,27 @@ class MapViewController:UIViewController, UISearchBarDelegate {
             }
             
             self.pointAnnotation = MKPointAnnotation()
-            self.pointAnnotation.title = searchBar.text
+            self.pointAnnotation.title = restaurantAddress
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude: localSearchResponse!.boundingRegion.center.longitude)
             
             
-            //self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
-            //self.mapView.centerCoordinate = self.pointAnnotation.coordinate
-            //self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
+            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
+            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
+            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
         }
+        
+    }
+
+  
+    @IBAction func showSearchBar(_ sender: Any) {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+
     
+   
     
 }
