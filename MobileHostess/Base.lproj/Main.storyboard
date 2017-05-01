@@ -629,13 +629,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvc-y0-fi4">
-                                <rect key="frame" x="16" y="137" width="75" height="30"/>
-                                <state key="normal" title="Go To Map"/>
-                                <connections>
-                                    <segue destination="Xa2-xY-2PO" kind="show" identifier="map2" id="d3b-Ig-Hkl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -671,15 +664,12 @@
                             <constraint firstItem="Fhe-eq-g82" firstAttribute="top" secondItem="b7Q-MD-BCd" secondAttribute="bottom" constant="8" id="k7Q-5S-GKW"/>
                             <constraint firstItem="qWu-Yt-RXx" firstAttribute="leading" secondItem="Lhg-4P-MCO" secondAttribute="leadingMargin" id="mfn-FN-a4R"/>
                             <constraint firstItem="aR2-Nv-rLe" firstAttribute="centerX" secondItem="Lhg-4P-MCO" secondAttribute="centerX" id="mlM-S5-hep"/>
-                            <constraint firstItem="Iuy-Ht-VFN" firstAttribute="top" secondItem="nvc-y0-fi4" secondAttribute="bottom" constant="5" id="nAk-oc-1Nv"/>
                             <constraint firstItem="Iuy-Ht-VFN" firstAttribute="leading" secondItem="Lhg-4P-MCO" secondAttribute="leadingMargin" constant="-7" id="oD3-ul-4PS"/>
                             <constraint firstItem="j74-rH-iKR" firstAttribute="centerX" secondItem="b7Q-MD-BCd" secondAttribute="centerX" id="qee-ze-dMC"/>
                             <constraint firstItem="Fhe-eq-g82" firstAttribute="centerX" secondItem="Lhg-4P-MCO" secondAttribute="centerX" id="rTA-tP-Aa4"/>
                             <constraint firstItem="sbP-9C-W4B" firstAttribute="leading" secondItem="qWu-Yt-RXx" secondAttribute="trailing" constant="13" id="uke-re-94H"/>
                             <constraint firstItem="QDy-5F-6S3" firstAttribute="leading" secondItem="Lhg-4P-MCO" secondAttribute="leadingMargin" constant="-4" id="v7q-EP-8Gk"/>
                             <constraint firstItem="j74-rH-iKR" firstAttribute="leading" secondItem="Lhg-4P-MCO" secondAttribute="leadingMargin" constant="-16" id="wbU-gJ-BvY"/>
-                            <constraint firstItem="nvc-y0-fi4" firstAttribute="leading" secondItem="qwb-JZ-Z5Y" secondAttribute="leading" id="whs-dX-35T"/>
-                            <constraint firstItem="nvc-y0-fi4" firstAttribute="top" secondItem="qwb-JZ-Z5Y" secondAttribute="bottom" constant="6" id="ygj-6W-tSn"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1013,7 +1003,4 @@
             <point key="canvasLocation" x="-311" y="187"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="d3b-Ig-Hkl"/>
-    </inferredMetricsTieBreakers>
 </document>
