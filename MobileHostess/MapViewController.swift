@@ -9,7 +9,17 @@
 import Foundation
 import MapKit
 
-class MapViewController:UIViewController {
+class MapViewController:UIViewController, UISearchBarDelegate {
+    
+    var searchController:UISearchController!
+
+  
+    @IBAction func showSearchBar(_ sender: Any) {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
