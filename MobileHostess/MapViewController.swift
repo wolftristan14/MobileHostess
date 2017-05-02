@@ -14,6 +14,8 @@ class MapViewController:UIViewController, UISearchBarDelegate {
     
     let ref = FIRDatabase.database().reference(withPath: "Restaurants")
 
+    var locationManager = CLLocationManager()
+
     
     var searchController:UISearchController!
     var annotation:MKAnnotation!
@@ -29,7 +31,17 @@ class MapViewController:UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref.observe(.value, with: { snapshot in
+        let latitude:CLLocationDegrees = (locationManager.location?.coordinate.latitude)!
+        let longitude:CLLocationDegrees = (locationManager.location?.coordinate.longitude)!
+        let latDelta:CLLocationDegrees = 0.05
+        let lonDelta:CLLocationDegrees = 0.05
+        let span = MKCoordinateSpanMake(latDelta, lonDelta)
+        let location = CLLocationCoordinate2DMake(latitude, longitude)
+        let region = MKCoordinateRegionMake(location, span)
+        
+        mapView.setRegion(region, animated: false)
+        
+      ref.observe(.value, with: { snapshot in
             
             var newRestaurants:[Restaurant] = []
             
