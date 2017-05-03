@@ -221,43 +221,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Hostess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-pt-tXX">
-                                <rect key="frame" x="105" y="43" width="165" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="90.5" y="43" width="194" height="43.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rit-Oy-DPm">
-                                <rect key="frame" x="172" y="196" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="196" width="30" height="30"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cv-Aw-zHw">
-                                <rect key="frame" x="166" y="74" width="0.0" height="0.0"/>
+                                <rect key="frame" x="166" y="88.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owd-L4-T5E">
-                                <rect key="frame" x="-4" y="374.5" width="383" height="292.5"/>
+                                <rect key="frame" x="-4" y="382" width="383" height="285"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="Restaurants">
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="34"/>
+                                <state key="normal" title="Restaurants" backgroundImage="tuxpi.com.1493833632">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="MWj-SO-sgT" kind="presentation" id="JJ6-fU-TzC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGc-uL-FhX">
-                                <rect key="frame" x="-4" y="82" width="383" height="292.5"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGc-uL-FhX">
+                                <rect key="frame" x="-4" y="96.5" width="383" height="285.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="34"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Customers"/>
+                                <state key="normal" title="Customers" backgroundImage="tuxpi.com.1493833709">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="8tF-Rn-oi1" kind="presentation" identifier="Customers" id="QwK-8r-4Fd"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="owd-L4-T5E" firstAttribute="bottom" secondItem="ar4-4u-nfc" secondAttribute="top" id="6Et-O8-8HJ"/>
                             <constraint firstItem="owd-L4-T5E" firstAttribute="top" secondItem="TGc-uL-FhX" secondAttribute="bottom" id="85d-Ua-M4g"/>
@@ -718,7 +719,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="he2-R0-EMV" id="njE-6G-Z2b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-Uf-iby">
@@ -1018,5 +1019,7 @@
     <resources>
         <image name="1486692948_thin-362_photo_image_album" width="128" height="128"/>
         <image name="camera-icon-52" width="512" height="512"/>
+        <image name="tuxpi.com.1493833632" width="454" height="256"/>
+        <image name="tuxpi.com.1493833709" width="600" height="399"/>
     </resources>
 </document>
