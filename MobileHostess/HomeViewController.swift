@@ -15,7 +15,6 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     var restaurantArray:[Restaurant] = []
     let ref = FIRDatabase.database().reference(withPath: "Restaurants")
-    var passedImage:UIImage!
     let locationManager = CLLocationManager()
 
 
@@ -67,7 +66,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "hometableviewcell", for: indexPath) as! HomeTableViewCell
         
-        let restaurant = restaurantArray[indexPath.row]
+        var restaurant = restaurantArray[indexPath.row]
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
         let cellWaitTime:String = restaurant.waitTimes?.first?.value as! String!
@@ -85,7 +84,6 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 
                 DispatchQueue.main.async {
                     cell.restuarantImageView.image = UIImage(data: data!)
-                    
                 }
             
             }).resume()
@@ -117,6 +115,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             detailsViewController.lastUpdateTime = restaurant.timeSinceLastUpdate
             
             detailsViewController.key = restaurant.key
+            tableView.isEditing = false
+            
             
         }
         

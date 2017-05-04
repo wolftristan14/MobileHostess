@@ -95,6 +95,9 @@ class MapViewController:UIViewController, UISearchBarDelegate {
         present(searchController, animated: true, completion: nil)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
 
     
    

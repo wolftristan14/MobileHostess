@@ -85,7 +85,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gJ7-hr-Zfp" firstAttribute="centerX" secondItem="3b6-Vs-7iO" secondAttribute="centerX" id="1h4-2t-6Oh"/>
                             <constraint firstItem="AId-32-Pwt" firstAttribute="top" secondItem="4tB-br-E3N" secondAttribute="bottom" constant="8" id="7SF-iy-Nxb"/>
@@ -180,7 +180,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uBw-KJ-KBB" firstAttribute="centerX" secondItem="o5A-ro-cGa" secondAttribute="centerX" id="AN6-fr-uSx"/>
                             <constraint firstItem="uBw-KJ-KBB" firstAttribute="top" secondItem="Pwh-Rm-yzm" secondAttribute="bottom" constant="8" id="LD3-KY-rm1"/>
@@ -346,7 +346,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Whl-PZ-rID" firstAttribute="top" secondItem="YhY-Kz-bJS" secondAttribute="bottom" constant="25" id="2Ha-OR-fg7"/>
                             <constraint firstItem="faS-tu-X7f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Bj-Oi-NWi"/>
@@ -372,7 +372,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="DSM-Yl-y7K" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="366" y="199"/>
+            <point key="canvasLocation" x="346" y="187"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="cKo-Lx-JyT">
@@ -391,6 +391,8 @@
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lot-Gm-caP">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="cZP-yW-GEd">
                                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="JNx-h3-r7G">
@@ -402,7 +404,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lot-Gm-caP" firstAttribute="top" secondItem="BRO-Bd-ZcB" secondAttribute="bottom" id="FH2-bX-9em"/>
                             <constraint firstItem="lot-Gm-caP" firstAttribute="leading" secondItem="s55-XK-6A5" secondAttribute="leading" id="UCl-hc-9XE"/>
@@ -486,7 +488,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XsS-H2-562" firstAttribute="top" secondItem="6r6-y9-9M4" secondAttribute="bottom" constant="8" id="0Y1-ye-mzS"/>
                             <constraint firstItem="rta-NC-M0l" firstAttribute="top" secondItem="se3-iK-Xdd" secondAttribute="bottom" constant="8" id="5rH-iz-gyw"/>
@@ -643,7 +645,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qWu-Yt-RXx" firstAttribute="centerY" secondItem="sbP-9C-W4B" secondAttribute="centerY" id="0eN-Hw-aEq"/>
                             <constraint firstItem="Iuy-Ht-VFN" firstAttribute="centerY" secondItem="gyH-yK-kZi" secondAttribute="centerY" id="2hG-O0-I3H"/>
@@ -713,7 +715,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JVK-Zy-tcC">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hometableviewcell" rowHeight="81" id="he2-R0-EMV" customClass="HomeTableViewCell" customModule="MobileHostess" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
@@ -761,6 +763,7 @@
                                                 <constraint firstItem="BnY-5q-J1i" firstAttribute="baseline" secondItem="wzD-Hf-biH" secondAttribute="baseline" id="nva-IW-b3B"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="restaurantAddressLabel" destination="BnY-5q-J1i" id="llf-1H-pVt"/>
                                             <outlet property="restaurantNameLabel" destination="FiK-Uf-iby" id="QDI-qa-jES"/>
@@ -778,6 +781,8 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w18-Tt-nQs">
                                 <rect key="frame" x="0.0" y="8" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
@@ -792,7 +797,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="JVK-Zy-tcC" id="2Hb-Sc-fOt"/>
@@ -872,7 +877,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZYE-9v-Vgy" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="04P-pZ-I9S"/>
                             <constraint firstItem="Xdb-Bd-vf2" firstAttribute="centerX" secondItem="QD3-DD-kWg" secondAttribute="centerX" id="4Hp-eH-2UP"/>
@@ -985,7 +990,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UbW-Sv-GPZ" firstAttribute="top" secondItem="7AE-re-SDa" secondAttribute="bottom" constant="101" id="0Yf-Rz-TqN"/>
                             <constraint firstItem="XG4-er-iGq" firstAttribute="top" secondItem="eXm-mD-l2f" secondAttribute="bottom" constant="8" id="2A1-Cu-af8"/>
