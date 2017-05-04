@@ -395,6 +395,11 @@
                                 <color key="barTintColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="cZP-yW-GEd">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Ze2-x8-5QF">
+                                            <connections>
+                                                <segue destination="CoJ-0H-clh" kind="unwind" unwindAction="prepareToUnwindToHomeVCWithSegue:" id="LuD-WB-Xfn"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="JNx-h3-r7G">
                                             <connections>
                                                 <action selector="showSearchBar:" destination="Xa2-xY-2PO" id="WaB-30-R5E"/>
@@ -420,6 +425,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW0-MQ-q5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CoJ-0H-clh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-335.19999999999999" y="953.97301349325346"/>
         </scene>
@@ -779,7 +785,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w18-Tt-nQs">
-                                <rect key="frame" x="0.0" y="8" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -806,7 +812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOn-Sa-7HR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="954"/>
+            <point key="canvasLocation" x="365.60000000000002" y="953.97301349325346"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="LyR-3g-7wb">

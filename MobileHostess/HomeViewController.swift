@@ -66,7 +66,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "hometableviewcell", for: indexPath) as! HomeTableViewCell
         
-        var restaurant = restaurantArray[indexPath.row]
+        let restaurant = restaurantArray[indexPath.row]
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
         let cellWaitTime:String = restaurant.waitTimes?.first?.value as! String!
@@ -128,5 +128,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
+    @IBAction func prepareToUnwindToHomeVC(segue:UIStoryboardSegue) {
+        
+    }
   
 }
