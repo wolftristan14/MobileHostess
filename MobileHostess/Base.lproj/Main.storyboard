@@ -108,6 +108,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="AId-32-Pwt" id="Bib-0e-Tid"/>
                         <outlet property="passwordTextField" destination="Ukl-Ws-wzG" id="65A-K1-hq9"/>
+                        <segue destination="BJ2-p6-AbZ" kind="show" identifier="restaurantlogin/editrestaurant" id="Yb1-Gk-aWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zI7-vn-fno" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,6 +202,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="uBw-KJ-KBB" id="NkO-pW-biu"/>
                         <outlet property="passwordTextField" destination="9gG-kT-7tg" id="guV-Oi-8QP"/>
+                        <segue destination="Vle-9d-B6a" kind="show" identifier="restaurantsignup/addrestaurant" id="gA9-Gk-Ezi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U89-0Q-Bq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -367,6 +369,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="YhY-Kz-bJS" id="gip-pz-Oz7"/>
                         <outlet property="passwordTextField" destination="iyh-Ig-5zT" id="ell-3L-Pe4"/>
+                        <segue destination="laH-zp-fEf" kind="show" identifier="signup/home" id="XHn-Am-J2o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -527,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1d-AL-4LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1706" y="954"/>
+            <point key="canvasLocation" x="-1706" y="965"/>
         </scene>
         <!--Add Restaurant View Controller-->
         <scene sceneID="c1w-De-Yo7">
@@ -794,6 +797,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Nearby Restaurants" id="RTI-Hh-rzN">
+                                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="63n-lm-bwe">
+                                            <connections>
+                                                <action selector="logOut:" destination="laH-zp-fEf" id="TpO-9w-ogB"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Map" id="XoP-6V-jFZ">
                                             <connections>
                                                 <action selector="performSegueToMap:" destination="laH-zp-fEf" id="omL-Sw-EPF"/>
@@ -1019,6 +1027,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Sod-Tr-OCX" id="71N-jD-u52"/>
                         <outlet property="passwordTextField" destination="Atk-qi-eGu" id="qAc-r1-rk1"/>
+                        <segue destination="laH-zp-fEf" kind="show" identifier="login/home" id="wMU-t6-uAt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00E-6H-HZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1033,4 +1042,8 @@
         <image name="tuxpi.com.1493833632" width="454" height="256"/>
         <image name="tuxpi.com.1493833709" width="600" height="399"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wMU-t6-uAt"/>
+        <segue reference="Yb1-Gk-aWb"/>
+    </inferredMetricsTieBreakers>
 </document>

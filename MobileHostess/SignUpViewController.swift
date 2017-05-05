@@ -36,8 +36,9 @@ class SignUpViewController: UIViewController {
                 if error == nil {
                     print("Signup was successful")
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                    self.present(vc!, animated: true, completion: nil)
+                    self.segue()
+                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+                    //self.present(vc!, animated: true, completion: nil)
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -51,4 +52,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    func segue() {
+        performSegue(withIdentifier: "signup/home", sender: self)
+    }
 }

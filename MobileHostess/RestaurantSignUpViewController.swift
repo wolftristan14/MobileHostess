@@ -37,8 +37,9 @@ class RestaurantSignUpViewController:UIViewController {
                 if error == nil {
                     print("Signup was successful")
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddRestaurant")
-                    self.present(vc!, animated: true, completion: nil)
+                    self.segue()
+                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddRestaurant")
+                    //self.present(vc!, animated: true, completion: nil)
                     
                     
                 } else {
@@ -52,5 +53,9 @@ class RestaurantSignUpViewController:UIViewController {
                 
             }
         }
+    }
+    
+    func segue() {
+        performSegue(withIdentifier: "restaurantsignup/addrestaurant", sender: self)
     }
 }

@@ -46,8 +46,9 @@ class RestaurantLoginViewController:UIViewController {
                 if error == nil {
                     print("Logged in")
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditRestaurant")
-                    self.present(vc!, animated: true, completion: nil)
+                    self.segue()
+                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditRestaurant")
+                    //self.present(vc!, animated: true, completion: nil)
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: "Incorrect username and/or password", preferredStyle: .alert)
@@ -59,4 +60,10 @@ class RestaurantLoginViewController:UIViewController {
             }
         }
     }
+    
+    func segue() {
+        performSegue(withIdentifier: "restaurantlogin/editrestaurant", sender: self)
+
+    }
+    
 }
