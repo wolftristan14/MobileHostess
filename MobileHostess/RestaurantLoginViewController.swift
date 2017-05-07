@@ -28,7 +28,17 @@ class RestaurantLoginViewController:UIViewController {
         }
     }
     @IBAction func prepareToUnwindToRestaurantLoginVC(segue:UIStoryboardSegue) {
+        emailTextField.text?.removeAll()
+        passwordTextField.text?.removeAll()
         
+        if FIRAuth.auth()?.currentUser != nil {
+            let firebaseAuth = FIRAuth.auth()
+            do {
+                try firebaseAuth?.signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError.localizedDescription)
+            }
+        }
     }
  
     
