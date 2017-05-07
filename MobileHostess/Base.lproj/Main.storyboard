@@ -799,7 +799,7 @@
                                     <navigationItem title="Nearby Restaurants" id="RTI-Hh-rzN">
                                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="63n-lm-bwe">
                                             <connections>
-                                                <action selector="logOut:" destination="laH-zp-fEf" id="TpO-9w-ogB"/>
+                                                <segue destination="Z7J-5F-It3" kind="unwind" unwindAction="prepareToUnwindToLoginVCWithSegue:" id="KPM-GG-PAN"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Map" id="XoP-6V-jFZ">
@@ -819,6 +819,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOn-Sa-7HR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Z7J-5F-It3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="365.60000000000002" y="953.97301349325346"/>
         </scene>

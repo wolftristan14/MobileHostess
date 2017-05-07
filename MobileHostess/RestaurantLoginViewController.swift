@@ -47,8 +47,7 @@ class RestaurantLoginViewController:UIViewController {
                     print("Logged in")
                     
                     self.segue()
-                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditRestaurant")
-                    //self.present(vc!, animated: true, completion: nil)
+                    
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: "Incorrect username and/or password", preferredStyle: .alert)

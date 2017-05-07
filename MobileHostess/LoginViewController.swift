@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,7 +27,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func prepareToUnwindToLoginVC(segue:UIStoryboardSegue) {
-        
+        emailTextField.text?.removeAll()
+        passwordTextField.text?.removeAll()
+       
+        if FIRAuth.auth()?.currentUser != nil {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError.localizedDescription)
+        }
+        }
     }
  
     
@@ -46,8 +56,7 @@ class LoginViewController: UIViewController {
                     print("Logged in")
                     
                     self.segue()
-                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                   // self.present(vc!, animated: true, completion: nil)
+                    
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: "Incorrect username and/or password", preferredStyle: .alert)

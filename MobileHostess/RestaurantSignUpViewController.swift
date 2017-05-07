@@ -38,8 +38,7 @@ class RestaurantSignUpViewController:UIViewController {
                     print("Signup was successful")
                     
                     self.segue()
-                    //let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddRestaurant")
-                    //self.present(vc!, animated: true, completion: nil)
+                  
                     
                     
                 } else {

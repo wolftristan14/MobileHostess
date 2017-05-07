@@ -131,14 +131,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     @IBAction func prepareToUnwindToHomeVC(segue:UIStoryboardSegue) {
         
     }
-    @IBAction func logOut(_ sender: Any) {
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            try firebaseAuth?.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
+  
     
     
   
