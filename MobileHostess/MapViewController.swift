@@ -51,7 +51,7 @@ class MapViewController:UIViewController, UISearchBarDelegate {
                 
                 newRestaurants.append(restaurant)
                 
-                self.loadAnnotations(restaurantAddress:restaurant.address!)
+                self.loadAnnotations(restaurantAddress:"\(restaurant.name!), \(restaurant.address!)")
 
             }
             
