@@ -26,8 +26,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWz-5m-Uil">
-                                <rect key="frame" x="82.5" y="20" width="210" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <rect key="frame" x="80.5" y="20" width="214" height="43.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -129,8 +129,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LQ-XF-4uz">
-                                <rect key="frame" x="67.5" y="20" width="240" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <rect key="frame" x="65.5" y="20" width="245" height="43.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -329,8 +329,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faS-tu-X7f">
-                                <rect key="frame" x="138" y="20" width="99" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <rect key="frame" x="137.5" y="20" width="101" height="43.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -400,7 +400,7 @@
                                 <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="cZP-yW-GEd">
+                                    <navigationItem title="Map" id="cZP-yW-GEd">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="Ze2-x8-5QF">
                                             <connections>
                                                 <segue destination="CoJ-0H-clh" kind="unwind" unwindAction="prepareToUnwindToHomeVCWithSegue:" id="LuD-WB-Xfn"/>
@@ -960,7 +960,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sod-Tr-OCX">
-                                <rect key="frame" x="82.5" y="246" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="240" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="gVV-J5-Bhn"/>
                                 </constraints>
@@ -969,7 +969,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-qi-eGu">
-                                <rect key="frame" x="82.5" y="336" width="210" height="30"/>
+                                <rect key="frame" x="82.5" y="324" width="210" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="E2s-LW-vJ4"/>
                                 </constraints>
@@ -978,32 +978,32 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfH-1t-4ZN">
-                                <rect key="frame" x="150.5" y="307" width="74" height="21"/>
+                                <rect key="frame" x="150.5" y="295" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnc-aP-QIL">
-                                <rect key="frame" x="167" y="217" width="41" height="21"/>
+                                <rect key="frame" x="167" y="211" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XG4-er-iGq">
-                                <rect key="frame" x="153" y="28" width="69" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <rect key="frame" x="153" y="28" width="70" height="43.5"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBb-pw-DiS">
-                                <rect key="frame" x="161.5" y="374" width="52" height="30"/>
+                                <rect key="frame" x="161.5" y="362" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="CustomerSignUp" id="VM4-b2-lXn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-re-SDa">
-                                <rect key="frame" x="170.5" y="412" width="34" height="30"/>
+                                <rect key="frame" x="170.5" y="400" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="7Cp-Rz-ZjD" kind="unwind" unwindAction="prepareToUnwindToCustomerOrRestaurantVCWithSegue:" id="EWK-F9-pm4"/>
@@ -1021,7 +1021,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UbW-Sv-GPZ" firstAttribute="top" secondItem="7AE-re-SDa" secondAttribute="bottom" constant="101" id="0Yf-Rz-TqN"/>
+                            <constraint firstItem="UbW-Sv-GPZ" firstAttribute="top" secondItem="7AE-re-SDa" secondAttribute="bottom" constant="113" id="0Yf-Rz-TqN"/>
                             <constraint firstItem="XG4-er-iGq" firstAttribute="top" secondItem="eXm-mD-l2f" secondAttribute="bottom" constant="8" id="2A1-Cu-af8"/>
                             <constraint firstItem="Atk-qi-eGu" firstAttribute="top" secondItem="qfH-1t-4ZN" secondAttribute="bottom" constant="8" id="83c-QY-HFn"/>
                             <constraint firstItem="XG4-er-iGq" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="Ftc-fh-nLb"/>
@@ -1036,7 +1036,7 @@
                             <constraint firstItem="7AE-re-SDa" firstAttribute="top" secondItem="QBb-pw-DiS" secondAttribute="bottom" constant="8" id="mvN-io-PT6"/>
                             <constraint firstItem="QBb-pw-DiS" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="ukx-y2-QSy"/>
                             <constraint firstItem="UbW-Sv-GPZ" firstAttribute="centerX" secondItem="CEn-8i-B8n" secondAttribute="centerX" id="zK4-jy-tMg"/>
-                            <constraint firstItem="qfH-1t-4ZN" firstAttribute="top" secondItem="Sod-Tr-OCX" secondAttribute="bottom" constant="31" id="zZU-C8-dA0"/>
+                            <constraint firstItem="qfH-1t-4ZN" firstAttribute="top" secondItem="Sod-Tr-OCX" secondAttribute="bottom" constant="25" id="zZU-C8-dA0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1058,7 +1058,7 @@
         <image name="tuxpi.com.1493833709" width="600" height="399"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wMU-t6-uAt"/>
+        <segue reference="XHn-Am-J2o"/>
         <segue reference="rRX-H5-kKH"/>
     </inferredMetricsTieBreakers>
 </document>
