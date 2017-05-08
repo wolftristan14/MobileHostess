@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10A8EAB1EBA47EC0096D7FB /* ButtonStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10A8EAA1EBA47EC0096D7FB /* ButtonStyleManager.swift */; };
+		A10057A81EC0F0D00015495D /* ImageViewStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10057A71EC0F0D00015495D /* ImageViewStyleManager.swift */; };
 		A116C06A1E803A1F00E69F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116C0691E803A1F00E69F13 /* AppDelegate.swift */; };
 		A116C06F1E803A1F00E69F13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A116C06D1E803A1F00E69F13 /* Main.storyboard */; };
 		A116C0721E803A1F00E69F13 /* MobileHostess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A116C0701E803A1F00E69F13 /* MobileHostess.xcdatamodeld */; };
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		4FCF7B20374D5D73B21C23D4 /* Pods-MobileHostess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHostess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHostess/Pods-MobileHostess.debug.xcconfig"; sourceTree = "<group>"; };
-		A10A8EAA1EBA47EC0096D7FB /* ButtonStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyleManager.swift; sourceTree = "<group>"; };
+		A10057A71EC0F0D00015495D /* ImageViewStyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewStyleManager.swift; sourceTree = "<group>"; };
 		A116C0661E803A1F00E69F13 /* MobileHostess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileHostess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A116C0691E803A1F00E69F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A116C06E1E803A1F00E69F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		A10A8EA91EBA47B10096D7FB /* UI Style Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A10A8EAA1EBA47EC0096D7FB /* ButtonStyleManager.swift */,
+				A10057A71EC0F0D00015495D /* ImageViewStyleManager.swift */,
 			);
 			name = "UI Style Classes";
 			path = MobileHostess;
@@ -273,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A233C71E82F85D009561FB /* HomeTableViewCell.swift in Sources */,
+				A10057A81EC0F0D00015495D /* ImageViewStyleManager.swift in Sources */,
 				A1A233C51E82F6FA009561FB /* HomeViewController.swift in Sources */,
 				A15F44BC1EAD1062001170FD /* CustomerOrRestaurantViewController.swift in Sources */,
 				A1A233D31E832A9D009561FB /* EditRestaurantViewController.swift in Sources */,
@@ -285,7 +286,6 @@
 				A116C06A1E803A1F00E69F13 /* AppDelegate.swift in Sources */,
 				A1A233CD1E832028009561FB /* AddRestaurantViewController.swift in Sources */,
 				A1A233D11E8324AD009561FB /* RestaurantLoginViewController.swift in Sources */,
-				A10A8EAB1EBA47EC0096D7FB /* ButtonStyleManager.swift in Sources */,
 				A15F44C01EB108A3001170FD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

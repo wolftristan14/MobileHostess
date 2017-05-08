@@ -224,6 +224,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Hostess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-pt-tXX">
                                 <rect key="frame" x="90.5" y="43" width="194" height="43.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43.5" id="a4m-7l-NEM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -574,7 +577,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-eq-g82">
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-eq-g82" customClass="ImageViewStyleManager" customModule="MobileHostess" customModuleProvider="target">
                                 <rect key="frame" x="112" y="373" width="150" height="150"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -762,7 +765,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aep-hy-ukc">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aep-hy-ukc" customClass="ImageViewStyleManager" customModule="MobileHostess" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="81" id="5hR-TI-ZFQ"/>
@@ -855,9 +858,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fk6-Qi-Gad">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fk6-Qi-Gad" customClass="ImageViewStyleManager" customModule="MobileHostess" customModuleProvider="target">
                                 <rect key="frame" x="87" y="123" width="200" height="200"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ArY-8v-ph6"/>
                                     <constraint firstAttribute="height" constant="200" id="FYz-ZB-pog"/>
                                 </constraints>
                             </imageView>
@@ -924,7 +928,6 @@
                             <constraint firstItem="wns-qt-m6t" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="fvm-L3-754"/>
                             <constraint firstItem="yNi-NO-TcS" firstAttribute="centerX" secondItem="MeO-Jq-7B1" secondAttribute="centerX" id="geL-xC-bXf"/>
                             <constraint firstItem="wns-qt-m6t" firstAttribute="top" secondItem="Sch-x8-DOy" secondAttribute="bottom" constant="24" id="guV-ZW-O6L"/>
-                            <constraint firstItem="Fk6-Qi-Gad" firstAttribute="leading" secondItem="MeO-Jq-7B1" secondAttribute="leadingMargin" constant="71" id="i1o-JG-aB8"/>
                             <constraint firstItem="Xdb-Bd-vf2" firstAttribute="leading" secondItem="MeO-Jq-7B1" secondAttribute="leadingMargin" constant="47" id="loU-T8-pt9"/>
                             <constraint firstItem="5Jx-7g-fjz" firstAttribute="top" secondItem="Fk6-Qi-Gad" secondAttribute="bottom" constant="19" id="qgc-8v-yOZ"/>
                             <constraint firstItem="yNi-NO-TcS" firstAttribute="top" secondItem="wns-qt-m6t" secondAttribute="bottom" constant="8" id="xDn-8Z-UyY"/>
@@ -1056,6 +1059,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wMU-t6-uAt"/>
-        <segue reference="Yb1-Gk-aWb"/>
+        <segue reference="rRX-H5-kKH"/>
     </inferredMetricsTieBreakers>
 </document>

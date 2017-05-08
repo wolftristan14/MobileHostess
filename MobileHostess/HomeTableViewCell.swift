@@ -17,5 +17,12 @@ class HomeTableViewCell:UITableViewCell {
     
     var uuid:String!
     
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layer.masksToBounds = true
+        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.borderWidth = 0.2
+    }
+    
     
 }
