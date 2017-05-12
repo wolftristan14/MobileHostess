@@ -88,16 +88,7 @@ class MapViewController:UIViewController, UISearchBarDelegate {
     }
 
   
-    @IBAction func showSearchBar(_ sender: Any) {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.delegate = self
-        present(searchController, animated: true, completion: nil)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-    }
+   
 
     
    
