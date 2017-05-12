@@ -35,6 +35,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
      ref.observe(.value, with: { snapshot in
+
         
         var newRestaurants:[Restaurant] = []
         
@@ -43,11 +44,15 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             let restaurant = Restaurant(snapshot: item as! FIRDataSnapshot)
         
             newRestaurants.append(restaurant)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+
+            }
         }
         
         
+        
         self.restaurantArray = newRestaurants
-        self.tableView.reloadData()
         
      }){
         (error) in
@@ -57,6 +62,31 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
      
         
+    }
+    
+    func getCoordinates(address: String, completionHandler: @escaping (_ lat: CLLocationDegrees?, _ long: CLLocationDegrees?, _ error: Error?) -> ()) -> Void {
+        
+        var _:CLLocationDegrees
+        var _:CLLocationDegrees
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks: [CLPlacemark]?, error: Error?) in
+            
+            if error != nil {
+                
+                print("Geocode failed with error: \(error?.localizedDescription)")
+                
+            } else if (placemarks?.count)! > 0 {
+                
+                let placemark = (placemarks?[0])! as CLPlacemark
+                let location = placemark.location
+                
+                let lat = location?.coordinate.latitude
+                let long = location?.coordinate.longitude
+                
+                completionHandler(lat, long, nil)
+            }
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

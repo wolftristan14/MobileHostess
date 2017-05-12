@@ -63,6 +63,8 @@ class MapViewController:UIViewController, UISearchBarDelegate {
         }
     }
     
+
+    
     func loadAnnotations(restaurantAddress:String) {
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = restaurantAddress
