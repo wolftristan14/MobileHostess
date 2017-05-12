@@ -50,7 +50,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        restaurantImage.contentMode = .scaleAspectFit
+        restaurantImage.contentMode = .scaleToFill
         restaurantImage.image = chosenImage
         dismiss(animated:true, completion: nil)
     }

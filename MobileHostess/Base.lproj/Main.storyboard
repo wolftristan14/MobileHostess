@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aqW-Ia-A1u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vle-9d-B6a">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -392,7 +392,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s55-XK-6A5">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s55-XK-6A5">
                                 <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lot-Gm-caP">
@@ -577,9 +577,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-eq-g82" customClass="ImageViewStyleManager" customModule="MobileHostess" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-eq-g82" customClass="ImageViewStyleManager" customModule="MobileHostess" customModuleProvider="target">
                                 <rect key="frame" x="112" y="373" width="150" height="150"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.87012737989425659" green="0.92161601781845093" blue="0.96916896104812622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="krt-lx-Yds"/>
                                     <constraint firstAttribute="width" constant="150" id="laX-jm-X6d"/>
@@ -659,7 +659,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDy-5F-6S3">
                                 <rect key="frame" x="25" y="424" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="19M-IA-4Pu"/>
                                     <constraint firstAttribute="width" secondItem="QDy-5F-6S3" secondAttribute="height" multiplier="1:1" id="Gsw-BU-2P3"/>
                                 </constraints>
                                 <state key="normal" title="Photo Library" image="1486692948_thin-362_photo_image_album"/>
@@ -721,7 +720,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFe-Yx-5PC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-997.60000000000002" y="964.76761619190415"/>
+            <point key="canvasLocation" x="-996" y="954"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="YCk-eB-DB0">
@@ -1058,7 +1057,7 @@
         <image name="tuxpi.com.1493833709" width="600" height="399"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XHn-Am-J2o"/>
+        <segue reference="wMU-t6-uAt"/>
         <segue reference="rRX-H5-kKH"/>
     </inferredMetricsTieBreakers>
 </document>
