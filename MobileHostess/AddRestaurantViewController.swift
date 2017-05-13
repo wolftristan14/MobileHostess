@@ -12,7 +12,7 @@ import Firebase
 import FirebaseStorage
 
 
-class AddRestaurantViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddRestaurantViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, EditRestaurantViewControllerDelegate {
     
     @IBOutlet weak var restaurantNameLabel: UITextField!
     @IBOutlet weak var restaurantAddressLabel: UITextField!
@@ -32,6 +32,7 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        
     }
     
     @IBAction func choosePhotoFromLibrary(_ sender: Any) {
@@ -133,6 +134,22 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func prepareToUnwindToAddRestaurantVC(segue:UIStoryboardSegue) {
         
+    }
+    
+    func userDidGoToAddRestaurantViewController(name: String!, address: String!, partySizes: [String]!) {
+        restaurantNameLabel.text = name
+        restaurantAddressLabel.text = address
+        let sortedPartySizesArray = partySizes.sorted()
+        let cleanSortedPartySizesArray = sortedPartySizesArray.description.trimmingCharacters(in: .init(charactersIn: "[]"))
+        partySizesTextView.text = cleanSortedPartySizesArray
+        waitTimes.removeAll()
+        for waitTime in sortedPartySizesArray {
+            
+        waitTimes.updateValue("0" as AnyObject, forKey: waitTime)
+            
+        }
+        let editRestaurantVC = self.storyboard?.instantiateViewController(withIdentifier: "EditRestaurant")
+        editRestaurantVC?.dismiss(animated: false, completion: nil)
     }
     
 }

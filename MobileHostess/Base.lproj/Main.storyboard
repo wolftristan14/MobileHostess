@@ -499,7 +499,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Edit" id="9aM-K9-7oT">
                                             <connections>
-                                                <segue destination="ycK-ew-O9j" kind="unwind" unwindAction="prepareToUnwindToAddRestaurantVCWithSegue:" id="hSI-dG-jWg"/>
+                                                <action selector="goToAddRestaurantViewController:" destination="BJ2-p6-AbZ" id="aSf-Xr-6Fq"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

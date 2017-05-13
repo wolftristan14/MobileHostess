@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import Firebase
 
+protocol EditRestaurantViewControllerDelegate {
+ 
+    func userDidGoToAddRestaurantViewController(name: String!, address: String!, partySizes: [String]!)
+}
+
 class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var restaurantNameLabel: UILabel!
@@ -19,12 +24,13 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var waitTimeLabel: UILabel!
     @IBOutlet weak var waitTimeTextField: UITextField!
     var waitTimesDictionary:[String: AnyObject] = [:]
-    var categoryAndTimeArray = [(String, String)]()
+    var categoryAndTimeArray = [(category:String, time:String)]()
     
 
-    var categoryArray:[String]!
-    var timeArray:[String]!
+    var categoryArray:[String] = []
     var currentCategory:String!
+    
+    var delegate: EditRestaurantViewControllerDelegate? = nil
   
     let rootRef = FIRDatabase.database().reference(withPath: "Restaurants")
 
@@ -53,12 +59,12 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
                 
             
             self.waitTimesDictionary.updateValue(time, forKey: category)
-            
+            self.categoryArray.append(category)
                 
             }
             
             self.updatePickerView()
-            //
+            
         })
         
         
@@ -131,6 +137,19 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         }
     }
 
+    @IBAction func goToAddRestaurantViewController(_ sender: Any) {
+        let AddRestaurantVC = self.storyboard?.instantiateViewController(withIdentifier: "AddRestaurant")
+        self.delegate = AddRestaurantVC as! EditRestaurantViewControllerDelegate?
+        
+        if delegate != nil {
+        
+        let restaurantName = restaurantNameLabel.text
+        let restaurantAddress = restaurantAddressLabel.text
+        present(AddRestaurantVC!, animated: true, completion: nil)
+        delegate!.userDidGoToAddRestaurantViewController(name: restaurantName, address:restaurantAddress, partySizes: self.categoryArray)
+        
+        }
+    }
     
     
 }
