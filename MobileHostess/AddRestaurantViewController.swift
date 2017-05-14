@@ -152,4 +152,8 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         editRestaurantVC?.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func clearPartySizes(_ sender: Any) {
+        waitTimes.removeAll()
+        partySizesTextView.text.removeAll()
+        }
 }
