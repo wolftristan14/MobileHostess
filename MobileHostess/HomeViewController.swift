@@ -55,15 +55,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         }
         self.restaurantArray = newRestaurants
 
-       /* for address in self.restaurantArray
-        var geocoder = CLGeocoder()
-        geocoder.geocodeAddressString("your address") {
-            placemarks, error in
-            let placemark = placemarks?.first
-            let lat = placemark?.location?.coordinate.latitude
-            let lon = placemark?.location?.coordinate.longitude
-            print("Lat: \(lat), Lon: \(lon)")
-        } */
+      
         
         
         
