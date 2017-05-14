@@ -34,8 +34,10 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             locationManager.startUpdatingLocation()
         }
         
+        
      ref.observe(.value, with: { snapshot in
 
+        
         
         var newRestaurants:[Restaurant] = []
         
@@ -43,16 +45,27 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
            
             let restaurant = Restaurant(snapshot: item as! FIRDataSnapshot)
         
+    
             newRestaurants.append(restaurant)
+        
             DispatchQueue.main.async {
                 self.tableView.reloadData()
 
             }
         }
-        
-        
-        
         self.restaurantArray = newRestaurants
+
+       /* for address in self.restaurantArray
+        var geocoder = CLGeocoder()
+        geocoder.geocodeAddressString("your address") {
+            placemarks, error in
+            let placemark = placemarks?.first
+            let lat = placemark?.location?.coordinate.latitude
+            let lon = placemark?.location?.coordinate.longitude
+            print("Lat: \(lat), Lon: \(lon)")
+        } */
+        
+        
         
      }){
         (error) in

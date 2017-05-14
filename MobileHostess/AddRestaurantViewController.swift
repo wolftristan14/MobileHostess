@@ -99,6 +99,8 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
     }
     
     func writeToDatabase(imageURL:String) {
+        
+        if waitTimes.count > 0 {
     
     let restaurantRef = databaseRef.child("Restaurants").child((FIRAuth.auth()?.currentUser?.uid)!)
         
@@ -126,6 +128,14 @@ class AddRestaurantViewController:UIViewController, UIImagePickerControllerDeleg
         
         presentEditRestaurantVC()
         
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "You must entar at least one party size!", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func presentEditRestaurantVC() {

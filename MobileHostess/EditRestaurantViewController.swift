@@ -54,6 +54,8 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             self.restaurantAddressLabel.text = userRestaurant.address
             self.waitTimesDictionary.removeAll()
             
+            if userRestaurant.waitTimes != nil {
+            
             for (category,time) in userRestaurant.waitTimes! {
                 
                 
@@ -62,7 +64,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             self.categoryArray.append(category)
                 
             }
-            
+            }
             self.updatePickerView()
             
         })
