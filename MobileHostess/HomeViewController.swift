@@ -104,7 +104,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         let restaurant = restaurantArray[indexPath.row]
         cell.restaurantNameLabel.text = restaurant.name
         cell.restaurantAddressLabel.text = restaurant.address
-        let cellWaitTime:String = restaurant.waitTimes?.first?.value as! String!
+        let cellWaitTime:String = restaurant.waitTimes?.first?.value as? String ?? ""
         cell.restaurantWaitTime.text = "\(cellWaitTime) Mins"
         cell.uuid = restaurant.uuid
         

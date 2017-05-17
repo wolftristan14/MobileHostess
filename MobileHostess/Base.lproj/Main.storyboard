@@ -47,7 +47,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ7-hr-Zfp">
-                                <rect key="frame" x="168.5" y="543" width="38" height="30"/>
+                                <rect key="frame" x="167" y="543" width="41" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -172,7 +173,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACa-4F-Q98">
-                                <rect key="frame" x="160" y="543" width="55" height="30"/>
+                                <rect key="frame" x="159" y="543" width="57" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -340,7 +342,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9co-qh-VHF">
-                                <rect key="frame" x="160" y="543" width="55" height="30"/>
+                                <rect key="frame" x="159" y="543" width="57" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -542,7 +545,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1d-AL-4LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ycK-ew-O9j" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1706" y="965"/>
+            <point key="canvasLocation" x="-1706" y="954"/>
         </scene>
         <!--Add Restaurant View Controller-->
         <scene sceneID="c1w-De-Yo7">
@@ -753,7 +756,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="he2-R0-EMV" id="njE-6G-Z2b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-Uf-iby">
@@ -1020,7 +1023,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbW-Sv-GPZ">
-                                <rect key="frame" x="168.5" y="543" width="38" height="30"/>
+                                <rect key="frame" x="167" y="543" width="41" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1068,7 +1072,7 @@
         <image name="tuxpi.com.1493833709" width="600" height="399"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wMU-t6-uAt"/>
-        <segue reference="rRX-H5-kKH"/>
+        <segue reference="XHn-Am-J2o"/>
+        <segue reference="Yb1-Gk-aWb"/>
     </inferredMetricsTieBreakers>
 </document>
