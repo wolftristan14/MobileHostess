@@ -39,7 +39,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         waitTimeCategoryPickerView.delegate = self
         waitTimeCategoryPickerView.dataSource = self
-        
+       
         
         
         
@@ -66,7 +66,6 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             }
             }
             self.updatePickerView()
-            
         })
         
         
@@ -83,6 +82,8 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             self.categoryAndTimeArray.sort {$0 < $1}
         }
         self.waitTimeCategoryPickerView.reloadAllComponents()
+        let waitTime:String = self.categoryAndTimeArray[0].1
+        self.waitTimeLabel.text = "\(waitTime) Mins"
      }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -96,17 +97,16 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        let waitTime:String = self.categoryAndTimeArray[row].1
-        waitTimeLabel.text = "\(waitTime) Mins"
+
+      
         return self.categoryAndTimeArray[row].0
 
-       
+     
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.currentCategory = self.categoryAndTimeArray[row].0
-        
+        let waitTime:String = self.categoryAndTimeArray[row].1
+        waitTimeLabel.text = "\(waitTime) Mins"
         }
     
     @IBAction func updateWaitTime(_ sender: Any) {
