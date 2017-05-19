@@ -80,6 +80,7 @@ class EditRestaurantViewController:UIViewController, UIPickerViewDelegate, UIPic
             self.categoryAndTimeArray.append((category, time as! String))
             
             self.categoryAndTimeArray.sort {$0 < $1}
+            
         }
         self.waitTimeCategoryPickerView.reloadAllComponents()
         let waitTime:String = self.categoryAndTimeArray[0].1

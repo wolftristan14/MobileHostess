@@ -11,19 +11,25 @@ import Firebase
 import CoreLocation
 
 
-class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchBarDelegate {
     
     var restaurantArray:[Restaurant] = []
+    var filteredRestaurantArray:[Restaurant] = []
+    var restaurantNameArray:[String] = []
     let ref = FIRDatabase.database().reference(withPath: "Restaurants")
     let locationManager = CLLocationManager()
+    
 
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    var isSearching = false
     
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.locationManager.requestAlwaysAuthorization()
         
         self.locationManager.requestWhenInUseAuthorization()
@@ -33,6 +39,11 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
+        searchBar.delegate = self
+        
+        searchBar.returnKeyType = UIReturnKeyType.done
+        
         
         
      ref.observe(.value, with: { snapshot in
@@ -47,17 +58,16 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
     
             newRestaurants.append(restaurant)
-        
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
 
             }
         }
+
         self.restaurantArray = newRestaurants
 
-      
-        
-        
+        print(self.restaurantArray)
         
      }){
         (error) in
@@ -69,40 +79,48 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
     
-    func getCoordinates(address: String, completionHandler: @escaping (_ lat: CLLocationDegrees?, _ long: CLLocationDegrees?, _ error: Error?) -> ()) -> Void {
-        
-        var _:CLLocationDegrees
-        var _:CLLocationDegrees
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address) { (placemarks: [CLPlacemark]?, error: Error?) in
-            
-            if error != nil {
-                
-                print("Geocode failed with error: \(error?.localizedDescription)")
-                
-            } else if (placemarks?.count)! > 0 {
-                
-                let placemark = (placemarks?[0])! as CLPlacemark
-                let location = placemark.location
-                
-                let lat = location?.coordinate.latitude
-                let long = location?.coordinate.longitude
-                
-                completionHandler(lat, long, nil)
-            }
-            
-        }
-    }
+ 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching == true {
+           return filteredRestaurantArray.count
+        } else {
         return restaurantArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "hometableviewcell", for: indexPath) as! HomeTableViewCell
         
-        let restaurant = restaurantArray[indexPath.row]
+        if isSearching == true {
+            let restaurant = filteredRestaurantArray[indexPath.row]
+            cell.restaurantNameLabel.text = restaurant.name
+            cell.restaurantAddressLabel.text = restaurant.address
+            let cellWaitTime:String = restaurant.waitTimes?.first?.value as? String ?? ""
+            cell.restaurantWaitTime.text = "\(cellWaitTime) Mins"
+            cell.uuid = restaurant.uuid
+            
+            if let imageURL = restaurant.imageURL {
+                let url = URL(string: imageURL)
+                URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+                    
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        cell.restuarantImageView.image = UIImage(data: data!)
+                    }
+                    
+                }).resume()
+                
+            }
+        } else {
+            let restaurant = restaurantArray[indexPath.row]
+        
         cell.restaurantNameLabel.text = restaurant.name
+        restaurantNameArray.append(restaurant.name!)
         cell.restaurantAddressLabel.text = restaurant.address
         let cellWaitTime:String = restaurant.waitTimes?.first?.value as? String ?? ""
         cell.restaurantWaitTime.text = "\(cellWaitTime) Mins"
@@ -122,7 +140,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
                 }
             
             }).resume()
-
+            }
         }
         
         
@@ -167,7 +185,18 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         
     }
   
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+            
+            view.endEditing(true)
+            tableView.reloadData()
+        } else {
+            isSearching = true
+            filteredRestaurantArray = restaurantArray.filter {$0.name == searchBar.text}
+            tableView.reloadData()
+        }
+    }
     
   
 }
