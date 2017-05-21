@@ -20,6 +20,8 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     let locationManager = CLLocationManager()
     
 
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchBarHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var searchBar: UISearchBar!
     var isSearching = false
@@ -29,6 +31,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.isHidden = true
         
         self.locationManager.requestAlwaysAuthorization()
         
@@ -198,5 +201,14 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
-  
+    @IBAction func showSearchBar(_ sender: Any) {
+        if searchBar.isHidden == true {
+        searchBar.isHidden = false
+            UIView.animate(withDuration: 0.5, animations: {self.searchBarHeightConstraint.constant = 44; self.tableViewHeightConstraint.constant = 559; self.view.layoutSubviews()})
+        } else {
+            searchBar.isHidden = true
+            UIView.animate(withDuration: 0.5, animations: {self.searchBarHeightConstraint.constant = 0; self.tableViewHeightConstraint.constant = 603; self.view.layoutSubviews()})
+        }
+        
+    }
 }
