@@ -151,8 +151,7 @@ class HomeViewController:UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "details" {
